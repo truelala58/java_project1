@@ -1,3 +1,5 @@
+package ru.stqa.project1.sandbox;
+
 public class MyThirdProgram {
 
 
