@@ -8,9 +8,9 @@ public class MyThirdProgram {
     Point p2 = new Point(16, - 3.8);
     Point p3 = new Point(1, 0);
     Point p4 = new Point(-3.33,  -115);
-    
-    System.out.println("Расстояние между двумя точками" + " = " + p1.distance(p2.x,p2.y));
-    System.out.println("Расстояние между двумя точками" + " = " + p3.distance(p4.x,p4.y));
+
+    System.out.println("Расстояние между двумя точками" + " = " + p1.distance(p2));
+    System.out.println("Расстояние между двумя точками" + " = " + p3.distance(p4));
   }
   public static double distance(Point p1, Point p2){
     double a = (p2.x-p1.x);

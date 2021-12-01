@@ -10,9 +10,9 @@ public class Point {
         this.x=x;
         this.y=y;
     }
-    public double distance(double x, double y){
-        double a = (x - this.x);
-        double b = (y - this.y);
+    public double distance(Point p){
+        double a = (p.x - this.x);
+        double b = (p.y - this.y);
         BigDecimal s = BigDecimal.valueOf(Math.sqrt(Math.pow(a,2) + Math.pow(b,2)));
         s = s.setScale(3,RoundingMode.HALF_UP);
         return s.doubleValue();
