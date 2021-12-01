@@ -11,7 +11,9 @@ public class Point {
         this.y=y;
     }
     public double distance(double x, double y){
-        BigDecimal s = BigDecimal.valueOf(Math.sqrt((x - this.x) + (y - this.y)));
+        double a = (x - this.x);
+        double b = (y - this.y);
+        BigDecimal s = BigDecimal.valueOf(Math.sqrt(Math.pow(a,2) + Math.pow(b,2)));
         s = s.setScale(3,RoundingMode.HALF_UP);
         return s.doubleValue();
     }
