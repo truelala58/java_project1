@@ -6,7 +6,7 @@ import ru.stqa.project1.addressbook.model.ContactData;
 public class ContactModificationTests extends TestBase{
 
     @Test
-    public void testContactModificationHomePageDown(){
+    public void testContactModificationEditionDown(){
         app.getContactHelper().initContactModificationHomePage();
         app.getContactHelper().fillContactForm(new ContactData("Test", "Testov", "Test city, Test street, 1", "+79211234567", "test@mail.ru"));
         app.getContactHelper().submitContactModificationDown();
@@ -14,7 +14,7 @@ public class ContactModificationTests extends TestBase{
         app.getSessionHelper().logout();
     }
     @Test
-    public void testContactModificationHomePageUp(){
+    public void testContactModificationEditionUp(){
         app.getContactHelper().initContactModificationHomePage();
         app.getContactHelper().fillContactForm(new ContactData("Test", "Testov", "Test city, Test street, 1", "+79211234567", "test@mail.ru"));
         app.getContactHelper().submitContactModificationUp();
