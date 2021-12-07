@@ -14,16 +14,16 @@ public class ApplicationManager {
     private  SessionHelper sessionHelper;
     private  NavigationHelper navigationHelper;
     private GroupHelper groupHelper;
-    private String browser;
+    private final String browser;
 
     public ApplicationManager(String browser) {
         this.browser=browser;
     }
 
     public void init() {
-        if (browser == Browser.CHROME.browserName()){
+        if (browser.equals(Browser.CHROME.browserName())){
             wd = new ChromeDriver();
-        } else if (browser == Browser.FIREFOX.browserName()){
+        } else if (browser.equals(Browser.FIREFOX.browserName())){
             wd = new FirefoxDriver();
         }
     /*    wd = new ChromeDriver();*/
