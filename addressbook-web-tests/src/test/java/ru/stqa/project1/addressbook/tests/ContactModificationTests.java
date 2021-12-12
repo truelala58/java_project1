@@ -7,6 +7,10 @@ public class ContactModificationTests extends TestBase{
 
     @Test
     public void testContactModificationEditionDown(){
+        if (! app.getContactHelper().isThereAContact()) {
+            app.getNavigationHelper().goToContactPage();
+            app.getContactHelper().contactCreation(new ContactData("Test", "Testov", "Test city, Test street, 1", "+79211234567", "test@mail.ru"));
+        }
         app.getContactHelper().initContactModificationHomePage();
         app.getContactHelper().fillContactForm(new ContactData("Test", "Testov", "Test city, Test street, 1", "+79211234567", "test@mail.ru"));
         app.getContactHelper().submitContactModificationDown();
@@ -15,6 +19,10 @@ public class ContactModificationTests extends TestBase{
     }
     @Test
     public void testContactModificationEditionUp(){
+        if (! app.getContactHelper().isThereAContact()) {
+            app.getNavigationHelper().goToContactPage();
+            app.getContactHelper().contactCreation(new ContactData("Test", "Testov", "Test city, Test street, 1", "+79211234567", "test@mail.ru"));
+        }
         app.getContactHelper().initContactModificationHomePage();
         app.getContactHelper().fillContactForm(new ContactData("Test", "Testov", "Test city, Test street, 1", "+79211234567", "test@mail.ru"));
         app.getContactHelper().submitContactModificationUp();
@@ -23,6 +31,10 @@ public class ContactModificationTests extends TestBase{
     }
     @Test
     public void testContactModificationDetailsDown(){
+        if (! app.getContactHelper().isThereAContact()) {
+            app.getNavigationHelper().goToContactPage();
+            app.getContactHelper().contactCreation(new ContactData("Test", "Testov", "Test city, Test street, 1", "+79211234567", "test@mail.ru"));
+        }
         app.getContactHelper().initContactDetails();
         app.getContactHelper().initContactModificationInside();
         app.getContactHelper().fillContactForm(new ContactData("Test", "Testov", "Test city, Test street, 1", "+79211234567", "test@mail.ru"));
@@ -32,6 +44,10 @@ public class ContactModificationTests extends TestBase{
     }
     @Test
     public void testContactModificationDetailsUp(){
+        if (! app.getContactHelper().isThereAContact()) {
+            app.getNavigationHelper().goToContactPage();
+            app.getContactHelper().contactCreation(new ContactData("Test", "Testov", "Test city, Test street, 1", "+79211234567", "test@mail.ru"));
+        }
         app.getContactHelper().initContactDetails();
         app.getContactHelper().initContactModificationInside();
         app.getContactHelper().fillContactForm(new ContactData("Test", "Testov", "Test city, Test street, 1", "+79211234567", "test@mail.ru"));

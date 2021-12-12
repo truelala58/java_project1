@@ -54,8 +54,17 @@ public class ContactHelper extends HelperBase{
         wd.switchTo().window(mainWindow);
     }
 
-
     public void deleteContactModifiy() {
         click(By.xpath("//div[@id='content']/form[2]/input[2]"));
+    }
+
+    public boolean isThereAContact() {
+        return isElementPresent(By.name("selected[]"));
+    }
+
+    public void contactCreation(ContactData contact) {
+        fillContactForm(contact);
+        submitContactForm();
+        returnToContactPage();
     }
 }
