@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import ru.stqa.project1.addressbook.model.ContactData;
-import ru.stqa.project1.addressbook.model.GroupData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +14,7 @@ public class ContactHelper extends HelperBase{
         super(wd);
     }
 
-    public void returnToContactPage() {
+    public void returnToHomePage() {
         click(By.linkText("home page"));
     }
 
@@ -70,7 +69,7 @@ public class ContactHelper extends HelperBase{
     public void contactCreation(ContactData contact) {
         fillContactForm(contact);
         submitContactForm();
-        returnToContactPage();
+        returnToHomePage();
     }
 
     public List<ContactData> getCountList() {
