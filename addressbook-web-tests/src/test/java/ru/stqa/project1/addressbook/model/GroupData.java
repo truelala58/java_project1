@@ -22,4 +22,11 @@ public class GroupData {
     public String getFooter() {
         return footer;
     }
+
+    @Override
+    public String toString() {
+        return "GroupData{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }
