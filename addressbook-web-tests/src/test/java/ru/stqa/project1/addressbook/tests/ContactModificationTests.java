@@ -12,7 +12,7 @@ public class ContactModificationTests extends TestBase{
     @Test
     public void testContactModificationEditionDown(){
         if (! app.getContactHelper().isThereAContact()) {
-            app.getNavigationHelper().goToContactPage();
+            app.goTo().goToContactPage();
             app.getContactHelper().contactCreation(new ContactData("Test", "Testov", "Test city, Test street, 1", "+79211234567", "test@mail.ru"));
         }
         List<ContactData> before = app.getContactHelper().getCountList();
@@ -29,12 +29,12 @@ public class ContactModificationTests extends TestBase{
         before.sort(byId);
         after.sort(byId);
         Assert.assertEquals(before,after);
-        app.getSessionHelper().logout();
+       // app.getSessionHelper().logout();
     }
     @Test
     public void testContactModificationEditionUp(){
         if (! app.getContactHelper().isThereAContact()) {
-            app.getNavigationHelper().goToContactPage();
+            app.goTo().goToContactPage();
             app.getContactHelper().contactCreation(new ContactData("Test", "Testov", "Test city, Test street, 1", "+79211234567", "test@mail.ru"));
         }
         List<ContactData> before = app.getContactHelper().getCountList();
@@ -51,12 +51,12 @@ public class ContactModificationTests extends TestBase{
         before.sort(byId);
         after.sort(byId);
         Assert.assertEquals(before,after);
-        app.getSessionHelper().logout();
+   //     app.getSessionHelper().logout();
     }
     @Test
     public void testContactModificationDetailsDown(){
         if (! app.getContactHelper().isThereAContact()) {
-            app.getNavigationHelper().goToContactPage();
+            app.goTo().goToContactPage();
             app.getContactHelper().contactCreation(new ContactData("Test", "Testov", "Test city, Test street, 1", "+79211234567", "test@mail.ru"));
         }
         List<ContactData> before = app.getContactHelper().getCountList();
@@ -74,12 +74,12 @@ public class ContactModificationTests extends TestBase{
         before.sort(byId);
         after.sort(byId);
         Assert.assertEquals(before,after);
-        app.getSessionHelper().logout();
+   //     app.getSessionHelper().logout();
     }
     @Test
     public void testContactModificationDetailsUp(){
         if (! app.getContactHelper().isThereAContact()) {
-            app.getNavigationHelper().goToContactPage();
+            app.goTo().goToContactPage();
             app.getContactHelper().contactCreation(new ContactData("Test", "Testov", "Test city, Test street, 1", "+79211234567", "test@mail.ru"));
         }
         List<ContactData> before = app.getContactHelper().getCountList();
@@ -97,6 +97,6 @@ public class ContactModificationTests extends TestBase{
         before.sort(byId);
         after.sort(byId);
         Assert.assertEquals(before,after);
-        app.getSessionHelper().logout();
+     //   app.getSessionHelper().logout();
     }
 }
