@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46c85cb9-28a9-4d87-9d8a-be871777eaea" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/project1/addressbook/appmanager/ContactHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/project1/addressbook/appmanager/ContactHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/project1/addressbook/tests/ContactCreationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/project1/addressbook/tests/ContactCreationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/project1/addressbook/tests/ContactModificationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/project1/addressbook/tests/ContactModificationTests.java" afterDir="false" />
     </list>
@@ -74,8 +74,8 @@
       <recent name="ru.stqa.project1.addressbook" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ContactModificationTests.testContactModificationEditionUp">
-    <configuration name="ContactDeletionTests.testContactDeletionDetails" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.ContactCreationTests.testCreationContact">
+    <configuration name="ContactCreationTests.testCreationContact" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-tests.test" />
       <extension name="coverage">
         <pattern>
@@ -84,8 +84,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.stqa.project1.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.stqa.project1.addressbook.tests.ContactDeletionTests" />
-      <option name="METHOD_NAME" value="testContactDeletionDetails" />
+      <option name="MAIN_CLASS_NAME" value="ru.stqa.project1.addressbook.tests.ContactCreationTests" />
+      <option name="METHOD_NAME" value="testCreationContact" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -166,19 +166,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="TestNG.ContactDeletionTests.testContactDeletionDetails" />
       <item itemvalue="TestNG.ContactModificationTests.testContactModificationDetailsDown" />
       <item itemvalue="TestNG.ContactModificationTests.testContactModificationDetailsUp" />
       <item itemvalue="TestNG.ContactModificationTests.testContactModificationEditionDown" />
       <item itemvalue="TestNG.ContactModificationTests.testContactModificationEditionUp" />
+      <item itemvalue="TestNG.ContactCreationTests.testCreationContact" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ContactCreationTests.testCreationContact" />
         <item itemvalue="TestNG.ContactModificationTests.testContactModificationEditionUp" />
         <item itemvalue="TestNG.ContactModificationTests.testContactModificationEditionDown" />
         <item itemvalue="TestNG.ContactModificationTests.testContactModificationDetailsUp" />
         <item itemvalue="TestNG.ContactModificationTests.testContactModificationDetailsDown" />
-        <item itemvalue="TestNG.ContactDeletionTests.testContactDeletionDetails" />
       </list>
     </recent_temporary>
   </component>
