@@ -31,8 +31,8 @@ public class ContactModificationTests extends TestBase{
         ContactData contact = new ContactData()
                 .withId(modifiedContact.getId()).withFirstname("Test").withLastname("Testov").withAddress("Test city, Test street, 1").withMobilePhone("+79211234567").withEmail("test@mail.ru");
         app.contact().modifyHomeDown(contact);
+        assertThat(app.contact().count(),equalTo(before.size()));
         Contacts after = app.contact().all();
-        assertEquals(after.size(),before.size());
         assertThat(after, equalTo(before.without(modifiedContact).withAdded(contact)));
         // app.getSessionHelper().logout();
     }
@@ -44,8 +44,8 @@ public class ContactModificationTests extends TestBase{
         ContactData contact = new ContactData()
                 .withId(modifiedContact.getId()).withFirstname("Test").withLastname("Testov").withAddress("Test city, Test street, 1").withMobilePhone("+79211234567").withEmail("test@mail.ru");
         app.contact().modifyHomeUp(contact);
+        assertThat(app.contact().count(),equalTo(before.size()));
         Contacts after = app.contact().all();
-        assertEquals(after.size(),before.size());
         assertThat(after, equalTo(before.without(modifiedContact).withAdded(contact)));
         //     app.getSessionHelper().logout();
     }
@@ -57,8 +57,8 @@ public class ContactModificationTests extends TestBase{
         ContactData contact = new ContactData()
                 .withId(modifiedContact.getId()).withFirstname("Test").withLastname("Testov").withAddress("Test city, Test street, 1").withMobilePhone("+79211234567").withEmail("test@mail.ru");
         app.contact().modifyInsideDown(contact);
+        assertThat(app.contact().count(),equalTo(before.size()));
         Contacts after = app.contact().all();
-        assertEquals(after.size(),before.size());
         assertThat(after, equalTo(before.without(modifiedContact).withAdded(contact)));
         //     app.getSessionHelper().logout();
     }
@@ -70,8 +70,8 @@ public class ContactModificationTests extends TestBase{
         ContactData contact = new ContactData()
                 .withId(modifiedContact.getId()).withFirstname("Test").withLastname("Testov").withAddress("Test city, Test street, 1").withMobilePhone("+79211234567").withEmail("test@mail.ru");
         app.contact().modifyInsideUp(contact);
+        assertThat(app.contact().count(),equalTo(before.size()));
         Contacts after = app.contact().all();
-        assertEquals(after.size(),before.size());
         assertThat(after, equalTo(before.without(modifiedContact).withAdded(contact)));
         //   app.getSessionHelper().logout();
     }

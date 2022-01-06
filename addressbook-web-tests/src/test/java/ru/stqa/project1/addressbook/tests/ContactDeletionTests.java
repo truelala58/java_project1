@@ -30,8 +30,8 @@ public class ContactDeletionTests extends TestBase{
         ContactData deletedContact = before.iterator().next();
         app.contact().deleteHome(deletedContact);
         app.goTo().goToHomePage();
+        assertThat(app.contact().count(),equalTo(before.size()-1));
         Contacts after = app.contact().all();
-        assertEquals(after.size(),before.size() - 1);
         assertThat(after, equalTo(before.without(deletedContact)));
         //   app.getSessionHelper().logout();
     }
@@ -42,8 +42,8 @@ public class ContactDeletionTests extends TestBase{
         ContactData deletedContact = before.iterator().next();
         app.contact().deleteModInside(deletedContact);
         app.goTo().goToHomePage();
+        assertThat(app.contact().count(),equalTo(before.size()-1));
         Contacts after = app.contact().all();
-        assertEquals(after.size(),before.size() - 1);
         assertThat(after, equalTo(before.without(deletedContact)));
         //   app.getSessionHelper().logout();
     }
@@ -54,8 +54,8 @@ public class ContactDeletionTests extends TestBase{
         ContactData deletedContact = before.iterator().next();
         app.contact().deleteModeHome(deletedContact);
         app.goTo().goToHomePage();
+        assertThat(app.contact().count(),equalTo(before.size()-1));
         Contacts after = app.contact().all();
-        assertEquals(after.size(),before.size() - 1);
         assertThat(after, equalTo(before.without(deletedContact)));
         //    app.getSessionHelper().logout();
 

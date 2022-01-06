@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import ru.stqa.project1.addressbook.model.ContactData;
 import ru.stqa.project1.addressbook.model.Contacts;
-import ru.stqa.project1.addressbook.model.Groups;
 
 import java.util.List;
 
@@ -66,6 +65,9 @@ public class ContactHelper extends HelperBase{
 
     public boolean isThereAContact() {
         return isElementPresent(By.name("selected[]"));
+    }
+    public int count() {
+        return  wd.findElements(By.name("selected[]")).size();
     }
 
     public void create(ContactData contact) {
