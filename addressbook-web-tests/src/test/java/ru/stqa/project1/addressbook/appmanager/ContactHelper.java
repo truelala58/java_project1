@@ -66,21 +66,66 @@ public class ContactHelper extends HelperBase{
         return isElementPresent(By.name("selected[]"));
     }
 
-    public void contactCreation(ContactData contact) {
+    public void create(ContactData contact) {
         fillContactForm(contact);
         submitContactForm();
         returnToHomePage();
     }
 
-    public List<ContactData> getCountList() {
+    public void modifyHomeDown(int index, ContactData contact) {
+        initContactModificationHomePage(index);
+        fillContactForm(contact);
+        submitContactModificationDown();
+        returnToHomePage();
+    }
+
+    public void modifyHomeUp(int index, ContactData contact) {
+        initContactModificationHomePage(index);
+        fillContactForm(contact);
+        submitContactModificationUp();
+        returnToHomePage();
+    }
+
+    public void modifyInsideDown(int index, ContactData contact) {
+        initContactDetails(index);
+        initContactModificationInside();
+        fillContactForm(contact);
+        submitContactModificationDown();
+        returnToHomePage();
+    }
+
+    public void modifyInsideUp(int index, ContactData contact) {
+        initContactDetails(index);
+        initContactModificationInside();
+        fillContactForm(contact);
+        submitContactModificationUp();
+        returnToHomePage();
+    }
+
+    public void deleteHome(int index) {
+        selectContact(index);
+        deleteContactHomePage();
+    }
+
+    public void deleteModInside(int index) {
+        initContactDetails(index);
+        initContactModificationInside();
+        deleteContactModifiy();
+    }
+
+    public void deleteModeHome(int index) {
+        initContactModificationHomePage(index);
+        deleteContactModifiy();
+    }
+
+    public List<ContactData> list() {
         List<ContactData> contacts = new ArrayList<>();
         List<WebElement> elements = wd.findElements(By.xpath("//tr[@name='entry']"));
         for (WebElement element : elements){
             String firstname = wd.findElement(By.xpath("//td[3]")).getText();
             String lastname = wd.findElement(By.xpath("//td[2]")).getText();
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-            ContactData contact = new ContactData(id,firstname,lastname, null,null,null);
-            contacts.add(contact);
+            contacts.add(new ContactData().withId(id).withFirstname(firstname).withLastname(lastname));
         }
         return contacts;
     }
