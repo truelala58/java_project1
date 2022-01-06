@@ -1,10 +1,18 @@
 package ru.stqa.project1.addressbook.tests;
 
+import org.hamcrest.CoreMatchers;
+import org.hamcrest.MatcherAssert;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.project1.addressbook.model.ContactData;
+import ru.stqa.project1.addressbook.model.Contacts;
+
 import java.util.Set;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.testng.Assert.assertEquals;
 
 public class ContactModificationTests extends TestBase{
 
@@ -18,61 +26,53 @@ public class ContactModificationTests extends TestBase{
 
     @Test
     public void testContactModificationEditionDown(){
-        Set<ContactData> before = app.contact().all();
+        Contacts before = app.contact().all();
         ContactData modifiedContact = before.iterator().next();
         ContactData contact = new ContactData()
                 .withId(modifiedContact.getId()).withFirstname("Test").withLastname("Testov").withAddress("Test city, Test street, 1").withMobilePhone("+79211234567").withEmail("test@mail.ru");
         app.contact().modifyHomeDown(contact);
-        Set<ContactData> after = app.contact().all();
-        Assert.assertEquals(after.size(),before.size());
-        before.remove(modifiedContact);
-        before.add(contact);
-        Assert.assertEquals(before,after);
+        Contacts after = app.contact().all();
+        assertEquals(after.size(),before.size());
+        assertThat(after, equalTo(before.without(modifiedContact).withAdded(contact)));
         // app.getSessionHelper().logout();
     }
 
     @Test
     public void testContactModificationEditionUp(){
-        Set<ContactData> before = app.contact().all();
+        Contacts before = app.contact().all();
         ContactData modifiedContact = before.iterator().next();
         ContactData contact = new ContactData()
                 .withId(modifiedContact.getId()).withFirstname("Test").withLastname("Testov").withAddress("Test city, Test street, 1").withMobilePhone("+79211234567").withEmail("test@mail.ru");
         app.contact().modifyHomeUp(contact);
-        Set<ContactData> after = app.contact().all();
-        Assert.assertEquals(after.size(),before.size());
-        before.remove(modifiedContact);
-        before.add(contact);
-        Assert.assertEquals(before,after);
+        Contacts after = app.contact().all();
+        assertEquals(after.size(),before.size());
+        assertThat(after, equalTo(before.without(modifiedContact).withAdded(contact)));
         //     app.getSessionHelper().logout();
     }
 
     @Test
     public void testContactModificationDetailsDown(){
-        Set<ContactData> before = app.contact().all();
+        Contacts before = app.contact().all();
         ContactData modifiedContact = before.iterator().next();
         ContactData contact = new ContactData()
                 .withId(modifiedContact.getId()).withFirstname("Test").withLastname("Testov").withAddress("Test city, Test street, 1").withMobilePhone("+79211234567").withEmail("test@mail.ru");
         app.contact().modifyInsideDown(contact);
-        Set<ContactData> after = app.contact().all();
-        Assert.assertEquals(after.size(),before.size());
-        before.remove(modifiedContact);
-        before.add(contact);
-        Assert.assertEquals(before,after);
+        Contacts after = app.contact().all();
+        assertEquals(after.size(),before.size());
+        assertThat(after, equalTo(before.without(modifiedContact).withAdded(contact)));
         //     app.getSessionHelper().logout();
     }
 
     @Test
     public void testContactModificationDetailsUp(){
-        Set<ContactData> before = app.contact().all();
+        Contacts before = app.contact().all();
         ContactData modifiedContact = before.iterator().next();
         ContactData contact = new ContactData()
                 .withId(modifiedContact.getId()).withFirstname("Test").withLastname("Testov").withAddress("Test city, Test street, 1").withMobilePhone("+79211234567").withEmail("test@mail.ru");
         app.contact().modifyInsideUp(contact);
-        Set<ContactData> after = app.contact().all();
-        Assert.assertEquals(after.size(),before.size());
-        before.remove(modifiedContact);
-        before.add(contact);
-        Assert.assertEquals(before,after);
+        Contacts after = app.contact().all();
+        assertEquals(after.size(),before.size());
+        assertThat(after, equalTo(before.without(modifiedContact).withAdded(contact)));
         //   app.getSessionHelper().logout();
     }
 

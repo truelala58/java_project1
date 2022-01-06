@@ -4,10 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import ru.stqa.project1.addressbook.model.ContactData;
-
-import java.util.HashSet;
+import ru.stqa.project1.addressbook.model.Contacts;
 import java.util.List;
-import java.util.Set;
+
 
 
 public class ContactHelper extends HelperBase{
@@ -59,7 +58,7 @@ public class ContactHelper extends HelperBase{
         wd.switchTo().window(mainWindow);
     }
 
-    public void deleteContactModifiy() {
+    public void deleteContactModify() {
         click(By.xpath("//div[@id='content']/form[2]/input[2]"));
     }
 
@@ -111,16 +110,16 @@ public class ContactHelper extends HelperBase{
     public void deleteModInside(ContactData contact) {
         initContactDetailsById(contact.getId());
         initContactModificationInside();
-        deleteContactModifiy();
+        deleteContactModify();
     }
 
     public void deleteModeHome(ContactData contact) {
         initContactModificationHomePageById(contact.getId());
-        deleteContactModifiy();
+        deleteContactModify();
     }
 
-    public Set<ContactData> all() {
-        Set<ContactData> contacts = new HashSet<>();
+    public Contacts all() {
+        Contacts contacts = new Contacts();
         List<WebElement> elements = wd.findElements(By.xpath("//tr[@name='entry']"));
         for (WebElement element : elements){
             String firstname = wd.findElement(By.xpath("//td[3]")).getText();
