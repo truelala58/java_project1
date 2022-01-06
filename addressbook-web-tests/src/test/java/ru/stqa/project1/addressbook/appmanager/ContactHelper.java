@@ -156,10 +156,10 @@ public class ContactHelper extends HelperBase{
         for (WebElement element : elements){
             String firstname = wd.findElement(By.xpath("//td[3]")).getText();
             String lastname = wd.findElement(By.xpath("//td[2]")).getText();
-            String[] phones = wd.findElement(By.xpath("//td[6]")).getText().split("\n");
+            String allPhones = wd.findElement(By.xpath("//td[6]")).getText();
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
             contactCache.add(new ContactData().withId(id).withFirstname(firstname).withLastname(lastname)
-                    .withHomePhone(phones[0]).withMobilePhone(phones[1]).withWorkPhone(phones[2]));
+                    .withAllPhones(allPhones));
         }
         return new Contacts(contactCache);
     }
