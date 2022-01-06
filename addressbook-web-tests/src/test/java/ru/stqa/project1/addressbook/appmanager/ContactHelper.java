@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import ru.stqa.project1.addressbook.model.ContactData;
 import ru.stqa.project1.addressbook.model.Contacts;
+import ru.stqa.project1.addressbook.model.Groups;
+
 import java.util.List;
 
 
@@ -69,6 +71,7 @@ public class ContactHelper extends HelperBase{
     public void create(ContactData contact) {
         fillContactForm(contact);
         submitContactForm();
+        contactCache = null;
         returnToHomePage();
     }
 
@@ -76,6 +79,7 @@ public class ContactHelper extends HelperBase{
         initContactModificationHomePageById(contact.getId());
         fillContactForm(contact);
         submitContactModificationDown();
+        contactCache = null;
         returnToHomePage();
     }
 
@@ -83,6 +87,7 @@ public class ContactHelper extends HelperBase{
         initContactModificationHomePageById(contact.getId());
         fillContactForm(contact);
         submitContactModificationUp();
+        contactCache = null;
         returnToHomePage();
     }
 
@@ -91,6 +96,7 @@ public class ContactHelper extends HelperBase{
         initContactModificationInside();
         fillContactForm(contact);
         submitContactModificationDown();
+        contactCache = null;
         returnToHomePage();
     }
 
@@ -99,35 +105,43 @@ public class ContactHelper extends HelperBase{
         initContactModificationInside();
         fillContactForm(contact);
         submitContactModificationUp();
+        contactCache = null;
         returnToHomePage();
     }
 
     public void deleteHome(ContactData contact) {
         selectContactById(contact.getId());
         deleteContactHomePage();
+        contactCache = null;
     }
 
     public void deleteModInside(ContactData contact) {
         initContactDetailsById(contact.getId());
         initContactModificationInside();
         deleteContactModify();
+        contactCache = null;
     }
 
     public void deleteModeHome(ContactData contact) {
         initContactModificationHomePageById(contact.getId());
         deleteContactModify();
+        contactCache = null;
     }
+    private Contacts contactCache = null;
 
     public Contacts all() {
-        Contacts contacts = new Contacts();
+        if (contactCache != null) {
+            return new Contacts(contactCache);
+        }
+        contactCache = new Contacts();
         List<WebElement> elements = wd.findElements(By.xpath("//tr[@name='entry']"));
         for (WebElement element : elements){
             String firstname = wd.findElement(By.xpath("//td[3]")).getText();
             String lastname = wd.findElement(By.xpath("//td[2]")).getText();
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-            contacts.add(new ContactData().withId(id).withFirstname(firstname).withLastname(lastname));
+            contactCache.add(new ContactData().withId(id).withFirstname(firstname).withLastname(lastname));
         }
-        return contacts;
+        return new Contacts(contactCache);
     }
 
 }
