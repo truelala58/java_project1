@@ -6,8 +6,9 @@ import org.openqa.selenium.WebElement;
 import ru.stqa.project1.addressbook.model.ContactData;
 import ru.stqa.project1.addressbook.model.Contacts;
 
+import java.util.ArrayList;
 import java.util.List;
-
+import java.util.stream.Collectors;
 
 
 public class ContactHelper extends HelperBase{
@@ -130,19 +131,15 @@ public class ContactHelper extends HelperBase{
         Contacts contacts = new Contacts();
         List<WebElement> elements = wd.findElements(By.xpath("//tr[@name='entry']"));
         for (WebElement element : elements){
-            String firstname = wd.findElement(By.xpath("//td[3]")).getText();
-            String lastname = wd.findElement(By.xpath("//td[2]")).getText();
-            String allPhones = wd.findElement(By.xpath("//td[6]")).getText();
-            String address = wd.findElement(By.xpath("//td[4]")).getText();
-            List<WebElement> allEmails = wd.findElements(By.xpath("//td[5]/a"));
-            String allTextEmails = null;
-            for (WebElement email:allEmails){
-                String emailText = email.getText();
-                allTextEmails = emailText;
-            }
+            List<WebElement> cells = element.findElements(By.tagName("td"));
+            String firstname = cells.get(2).getText();
+            String lastname = cells.get(1).getText();
+            String allPhones = cells.get(5).getText();
+            String address = cells.get(3).getText();
+            String allEmails = cells.get(4).getText();
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
             contacts.add(new ContactData().withId(id).withFirstname(firstname).withLastname(lastname)
-                    .withAllPhones(allPhones).withAddress(address).withAllEmails(allTextEmails));
+                    .withAllPhones(allPhones).withAddress(address).withAllEmails(allEmails));
         }
         return contacts;
     }

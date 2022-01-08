@@ -30,11 +30,11 @@ public class ContactEmailTests extends TestBase{
     private String mergeEmails(ContactData contact) {
         return Arrays.asList(contact.getEmail(),contact.getEmail2(),contact.getEmail3())
                 .stream().filter((s)-> ! s.equals(""))
-                .map(ContactPhoneTests::cleaned)
+                .map(ContactEmailTests::cleaned)
                 .collect(Collectors.joining("\n"));
     }
 
-    public static String cleaned(String phone){
-        return phone.replaceAll("\\s","").replaceAll("[-()]","");
+    public static String cleaned(String email){
+        return email.replaceAll("\\n\\s+","\n ").replaceAll("\\s+"," ");
     }
 }
