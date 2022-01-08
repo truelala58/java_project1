@@ -7,32 +7,31 @@ import ru.stqa.project1.addressbook.model.ContactData;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
-import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class ContactPhoneTests extends TestBase{
-
+public class ContactEmailTests extends TestBase{
     @BeforeMethod
     public void ensurePreconditions () {
         if (app.contact().all().size()==0) {
             app.goTo().contactPage();
             app.contact().create(new ContactData().withFirstname("Test").withLastname("Testov")
-                    .withHomePhone("+7(912)1234567").withMobilePhone("8(921)765-4321").withWorkPhone("5435627"));
+                    .withEmail("test@mail.ru").withEmail2("test2@mail.ru").withEmail3("test3@mail.ru"));
         }
     }
 
     @Test
-    public void testContactPhone() {
+    public void testContactEmail() {
         ContactData contact = app.contact().all().iterator().next();
         ContactData contactInfoFormEditForm = app.contact().infoFormEditForm(contact);
-        assertThat(contact.getAllPhones(),equalTo(mergePhones(contactInfoFormEditForm)));
+        assertThat(contact.getAllEmails(),equalTo(mergeEmails(contactInfoFormEditForm)));
     }
 
-    private String mergePhones(ContactData contact) {
-       return Arrays.asList(contact.getHomePhone(),contact.getMobilePhone(),contact.getWorkPhone())
-               .stream().filter((s)-> ! s.equals(""))
-               .map(ContactPhoneTests::cleaned)
-               .collect(Collectors.joining("\n"));
+    private String mergeEmails(ContactData contact) {
+        return Arrays.asList(contact.getEmail(),contact.getEmail2(),contact.getEmail3())
+                .stream().filter((s)-> ! s.equals(""))
+                .map(ContactPhoneTests::cleaned)
+                .collect(Collectors.joining("\n"));
     }
 
     public static String cleaned(String phone){
