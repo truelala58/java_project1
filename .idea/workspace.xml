@@ -7,8 +7,10 @@
     <list default="true" id="46c85cb9-28a9-4d87-9d8a-be871777eaea" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addressbook-web-tests/out/test/classes/ru/stqa/project1/addressbook/appmanager/ContactHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/out/test/classes/ru/stqa/project1/addressbook/appmanager/ContactHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook-web-tests/out/test/classes/ru/stqa/project1/addressbook/tests/ContactAddressTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/out/test/classes/ru/stqa/project1/addressbook/tests/ContactAddressTests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addressbook-web-tests/out/test/classes/ru/stqa/project1/addressbook/tests/ContactEmailTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/out/test/classes/ru/stqa/project1/addressbook/tests/ContactEmailTests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/project1/addressbook/appmanager/ContactHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/project1/addressbook/appmanager/ContactHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/project1/addressbook/tests/ContactAddressTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/project1/addressbook/tests/ContactAddressTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/project1/addressbook/tests/ContactEmailTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/project1/addressbook/tests/ContactEmailTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,6 +94,23 @@
     </key>
   </component>
   <component name="RunManager" selected="TestNG.ContactEmailTests.testContactEmail">
+    <configuration name="ContactAddressTests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="addressbook-web-tests.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.stqa.project1.addressbook.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.stqa.project1.addressbook.tests" />
+      <option name="MAIN_CLASS_NAME" value="ru.stqa.project1.addressbook.tests.ContactAddressTests" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ContactAddressTests.testContactAddress" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-tests.test" />
       <extension name="coverage">
@@ -110,7 +129,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ContactCreationTests.testCreationContact" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ContactEmailTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-tests.test" />
       <extension name="coverage">
         <pattern>
@@ -119,9 +138,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.stqa.project1.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.stqa.project1.addressbook.tests.ContactCreationTests" />
-      <option name="METHOD_NAME" value="testCreationContact" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="MAIN_CLASS_NAME" value="ru.stqa.project1.addressbook.tests.ContactEmailTests" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -146,7 +164,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ContactModificationTests.testContactModificationEditionDown" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ContactPhoneTests.testContactPhone" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-tests.test" />
       <extension name="coverage">
         <pattern>
@@ -155,26 +173,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.stqa.project1.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.stqa.project1.addressbook.tests.ContactModificationTests" />
-      <option name="METHOD_NAME" value="testContactModificationEditionDown" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GroupCreationTests.testBadGroupCreation" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="addressbook-web-tests.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.stqa.project1.addressbook.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.stqa.project1.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.stqa.project1.addressbook.tests.GroupCreationTests" />
-      <option name="METHOD_NAME" value="testBadGroupCreation" />
+      <option name="MAIN_CLASS_NAME" value="ru.stqa.project1.addressbook.tests.ContactPhoneTests" />
+      <option name="METHOD_NAME" value="testContactPhone" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -183,19 +183,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="TestNG.ContactCreationTests.testCreationContact" />
       <item itemvalue="TestNG.ContactEmailTests.testContactEmail" />
-      <item itemvalue="TestNG.GroupCreationTests.testBadGroupCreation" />
-      <item itemvalue="TestNG.ContactModificationTests.testContactModificationEditionDown" />
       <item itemvalue="TestNG.ContactAddressTests.testContactAddress" />
+      <item itemvalue="TestNG.ContactPhoneTests.testContactPhone" />
+      <item itemvalue="TestNG.ContactAddressTests" />
+      <item itemvalue="TestNG.ContactEmailTests" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.ContactEmailTests.testContactEmail" />
         <item itemvalue="TestNG.ContactAddressTests.testContactAddress" />
-        <item itemvalue="TestNG.ContactModificationTests.testContactModificationEditionDown" />
-        <item itemvalue="TestNG.ContactCreationTests.testCreationContact" />
-        <item itemvalue="TestNG.GroupCreationTests.testBadGroupCreation" />
+        <item itemvalue="TestNG.ContactEmailTests" />
+        <item itemvalue="TestNG.ContactPhoneTests.testContactPhone" />
+        <item itemvalue="TestNG.ContactAddressTests" />
       </list>
     </recent_temporary>
   </component>
@@ -228,11 +228,6 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="18" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/project1/addressbook/appmanager/ContactHelper.java</url>
-          <line>148</line>
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

@@ -28,13 +28,13 @@ public class ContactEmailTests extends TestBase{
     }
 
     private String mergeEmails(ContactData contact) {
-        return Arrays.asList(contact.getEmail(),contact.getEmail2(),contact.getEmail3())
+        return Arrays.asList(contact.getEmail().trim(),contact.getEmail2().trim(),contact.getEmail3().trim())
                 .stream().filter((s)-> ! s.equals(""))
                 .map(ContactEmailTests::cleaned)
                 .collect(Collectors.joining("\n"));
     }
 
     public static String cleaned(String email){
-        return email.replaceAll("\\n\\s+","\n ").replaceAll("\\s+"," ");
+        return email.replaceAll("\\s{2,}"," ");
     }
 }

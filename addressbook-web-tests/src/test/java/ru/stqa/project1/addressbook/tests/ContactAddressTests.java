@@ -4,7 +4,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.project1.addressbook.model.ContactData;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -27,8 +29,15 @@ public class ContactAddressTests extends TestBase{
         assertThat(contact.getAddress(),equalTo(cleaned(contactInfoFormEditForm.getAddress())));
     }
 
-       public static String cleaned(String phone) {
-        return phone.replaceAll("\\n\\s+", "\n").replaceAll("\\s+\\n","\n");
+
+    public static String cleaned(String address) {
+        String[] adr = address.trim().split("\n");
+        List<String> newAdr = new ArrayList<>();
+            for (String a:adr){
+                String b = a.trim();
+                newAdr.add(b);
+            }
+        return String.join("\n", newAdr).replaceAll("\\s{2,}"," ");
     }
 
 }
