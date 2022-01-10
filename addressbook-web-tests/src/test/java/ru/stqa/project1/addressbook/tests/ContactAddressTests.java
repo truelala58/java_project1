@@ -5,9 +5,7 @@ import org.testng.annotations.Test;
 import ru.stqa.project1.addressbook.model.ContactData;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
