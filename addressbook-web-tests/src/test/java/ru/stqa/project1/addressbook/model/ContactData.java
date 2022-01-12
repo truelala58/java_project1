@@ -10,12 +10,17 @@ public class ContactData {
     private String homePhone;
     private String mobilePhone;
     private String workPhone;
+    private String phone2;
     private String allPhones;
     private String email;
     private String email2;
     private String email3;
     private String allEmails;
     private File photo;
+
+    public String getPhone2() {
+        return phone2;
+    }
 
     public File getPhoto() {
         return photo;
@@ -66,6 +71,11 @@ public class ContactData {
 
     public String getEmail() {
         return email;
+    }
+
+    public ContactData withPhone2(String phone2) {
+        this.phone2 = phone2;
+        return this;
     }
 
     public ContactData withPhoto(File photo) {
