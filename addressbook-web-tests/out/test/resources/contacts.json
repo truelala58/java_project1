@@ -1,0 +1,29 @@
+[
+  {
+    "firstname": "Test 0",
+    "lastname": "Testov 0",
+    "address": "Test city, Test street, 0",
+    "homePhone": "+79211234560",
+    "mobilePhone": "8(812)1234560",
+    "workPhone": "465-34-50",
+    "email": "test0@mail.ru"
+  },
+  {
+    "firstname": "Test 1",
+    "lastname": "Testov 1",
+    "address": "Test city, Test street, 1",
+    "homePhone": "+79211234561",
+    "mobilePhone": "8(812)1234561",
+    "workPhone": "465-34-51",
+    "email": "test1@mail.ru"
+  },
+  {
+    "firstname": "Test 2",
+    "lastname": "Testov 2",
+    "address": "Test city, Test street, 2",
+    "homePhone": "+79211234562",
+    "mobilePhone": "8(812)1234562",
+    "workPhone": "465-34-52",
+    "email": "test2@mail.ru"
+  }
+]

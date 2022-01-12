@@ -1,5 +1,5 @@
 package ru.stqa.project1.addressbook.tests;
-;
+
 import com.google.gson.Gson;
 import com.thoughtworks.xstream.XStream;
 import org.openqa.selenium.json.TypeToken;

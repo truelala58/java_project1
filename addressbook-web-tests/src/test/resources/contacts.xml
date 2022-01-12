@@ -1,0 +1,29 @@
+<list>
+  <contact>
+    <firstname>Test 0</firstname>
+    <lastname>Testov 0</lastname>
+    <address>Test city, Test street, 0</address>
+    <homePhone>+79211234560</homePhone>
+    <mobilePhone>8(812)1234560</mobilePhone>
+    <workPhone>465-34-50</workPhone>
+    <email>test0@mail.ru</email>
+  </contact>
+  <contact>
+    <firstname>Test 1</firstname>
+    <lastname>Testov 1</lastname>
+    <address>Test city, Test street, 1</address>
+    <homePhone>+79211234561</homePhone>
+    <mobilePhone>8(812)1234561</mobilePhone>
+    <workPhone>465-34-51</workPhone>
+    <email>test1@mail.ru</email>
+  </contact>
+  <contact>
+    <firstname>Test 2</firstname>
+    <lastname>Testov 2</lastname>
+    <address>Test city, Test street, 2</address>
+    <homePhone>+79211234562</homePhone>
+    <mobilePhone>8(812)1234562</mobilePhone>
+    <workPhone>465-34-52</workPhone>
+    <email>test2@mail.ru</email>
+  </contact>
+</list>
