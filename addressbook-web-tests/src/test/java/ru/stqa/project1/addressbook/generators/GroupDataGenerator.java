@@ -3,7 +3,10 @@ package ru.stqa.project1.addressbook.generators;
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
 import com.beust.jcommander.ParameterException;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.thoughtworks.xstream.XStream;
+import org.openqa.selenium.json.Json;
 import ru.stqa.project1.addressbook.model.GroupData;
 
 import java.io.File;
@@ -39,9 +42,19 @@ public class GroupDataGenerator {
             saveAsCsv(groups,new File(file));
         } else if (format.equals("xml")) {
             saveAsXml(groups,new File(file));
-        } else {
+        } else if (format.equals("json")) {
+        saveAsJson(groups,new File(file));
+        }else {
             System.out.println("Unrecognized format" + format);
         }
+    }
+
+    private void saveAsJson(List<GroupData> groups, File file) throws IOException {
+        Gson gson = new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create();
+        String json = gson.toJson(groups);
+        Writer writer = new FileWriter(file);
+        writer.write(json);
+        writer.close();
     }
 
     private void saveAsXml(List<GroupData> groups, File file) throws IOException {
@@ -66,7 +79,7 @@ public class GroupDataGenerator {
         List<GroupData> groups = new ArrayList<>();
         for (int i = 0; i < count; i++){
             groups.add(new GroupData().withName(String.format("test %s", i))
-                    .withHeader(String.format("header %s",i)).withFooter(String.format("footer %s",i)));
+                    .withHeader(String.format("header \n%s",i)).withFooter(String.format("footer \n%s",i)));
         }
         return groups;
     }
