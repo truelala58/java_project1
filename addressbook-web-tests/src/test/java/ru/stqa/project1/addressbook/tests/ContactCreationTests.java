@@ -51,7 +51,7 @@ public class ContactCreationTests extends TestBase{
       }
   }
 
-    @Test(dataProvider = "validContactsFromXml")
+    @Test(dataProvider = "validContactsFromJson")
     public void testCreationContact(ContactData contact) throws Exception {
         Contacts before = app.contact().all();
         //File photo = new File("src/test/resources/photo.png");

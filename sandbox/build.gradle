@@ -1,11 +1,10 @@
 apply plugin: 'java'
 apply plugin: 'application'
-mainClassName = "MySecondProgram"
 
 repositories{
     mavenCentral()
 }
 
 dependencies{
-    implementation("org.testng:testng:7.4.0")
+    testImplementation 'org.testng:testng:7.4.0'
 }
