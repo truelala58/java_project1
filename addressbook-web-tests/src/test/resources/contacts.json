@@ -6,7 +6,10 @@
     "homePhone": "+79211234560",
     "mobilePhone": "8(812)1234560",
     "workPhone": "465-34-50",
-    "email": "test0@mail.ru"
+    "phone2": "8(812)1234560",
+    "email": "test0@mail.ru",
+    "email2": "test0@mail.ru",
+    "email3": "test0@mail.ru"
   },
   {
     "firstname": "Test 1",
@@ -15,15 +18,9 @@
     "homePhone": "+79211234561",
     "mobilePhone": "8(812)1234561",
     "workPhone": "465-34-51",
-    "email": "test1@mail.ru"
-  },
-  {
-    "firstname": "Test 2",
-    "lastname": "Testov 2",
-    "address": "Test city, Test street, 2",
-    "homePhone": "+79211234562",
-    "mobilePhone": "8(812)1234562",
-    "workPhone": "465-34-52",
-    "email": "test2@mail.ru"
+    "phone2": "8(812)1234561",
+    "email": "test1@mail.ru",
+    "email2": "test1@mail.ru",
+    "email3": "test1@mail.ru"
   }
 ]

@@ -8,6 +8,7 @@ import ru.stqa.project1.addressbook.model.ContactData;
 import ru.stqa.project1.addressbook.model.Contacts;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Iterator;
@@ -53,12 +54,12 @@ public class ContactCreationTests extends TestBase{
 
     @Test(dataProvider = "validContactsFromJson")
     public void testCreationContact(ContactData contact) throws Exception {
-        Contacts before = app.contact().all();
-        //File photo = new File("src/test/resources/photo.png");
+        Contacts before = app.db().contacts();
+     //   File photo = new File("src/test/resources/photo.png");
         app.goTo().contactPage();
         app.contact().create(contact);
         assertThat(app.contact().count(),equalTo(before.size()+1));
-        Contacts after = app.contact().all();
+        Contacts after = app.db().contacts();
         assertThat(after, equalTo(
                 before.withAdded(contact.withId(after.stream().mapToInt(ContactData::getId).max().getAsInt()))));
         //  app.getSessionHelper().logout();
