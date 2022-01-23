@@ -12,7 +12,7 @@ public class ContactModificationTests extends TestBase{
 
     @BeforeMethod
     public void ensurePreconditions () {
-        if (app.contact().all().size()==0) {
+        if (app.db().contacts().size()==0) {
             app.goTo().contactPage();
             app.contact().create(new ContactData().withFirstname("Test").withLastname("Testov"));
         }
@@ -20,52 +20,64 @@ public class ContactModificationTests extends TestBase{
 
     @Test
     public void testContactModificationEditionDown(){
-        Contacts before = app.contact().all();
+        Contacts before = app.db().contacts();
         ContactData modifiedContact = before.iterator().next();
         ContactData contact = new ContactData()
-                .withId(modifiedContact.getId()).withFirstname("Test").withLastname("Testov").withAddress("Test city, Test street, 1").withMobilePhone("+79211234567").withEmail("test@mail.ru");
+                .withId(modifiedContact.getId()).withFirstname("Test").withLastname("Testov")
+                .withAddress("Test city, Test street, 1").withMobilePhone("+79211234567").withEmail("test@mail.ru")
+                .withEmail2("test2@mail.ru").withEmail3("test3@mail.ru").withPhone2("+79211234567")
+                .withWorkPhone("8(812)98737373").withHomePhone("435-8377");
         app.contact().modifyHomeDown(contact);
         assertThat(app.contact().count(),equalTo(before.size()));
-        Contacts after = app.contact().all();
+        Contacts after = app.db().contacts();
         assertThat(after, equalTo(before.without(modifiedContact).withAdded(contact)));
         // app.getSessionHelper().logout();
     }
 
     @Test
     public void testContactModificationEditionUp(){
-        Contacts before = app.contact().all();
+        Contacts before = app.db().contacts();
         ContactData modifiedContact = before.iterator().next();
         ContactData contact = new ContactData()
-                .withId(modifiedContact.getId()).withFirstname("Test").withLastname("Testov").withAddress("Test city, Test street, 1").withMobilePhone("+79211234567").withEmail("test@mail.ru");
+                .withId(modifiedContact.getId()).withFirstname("Test").withLastname("Testov")
+                .withAddress("Test city, Test street, 1").withMobilePhone("+79211234567").withEmail("test@mail.ru")
+                .withEmail2("test2@mail.ru").withEmail3("test3@mail.ru").withPhone2("+79211234567")
+                .withWorkPhone("8(812)98737373").withHomePhone("435-8377");
         app.contact().modifyHomeUp(contact);
         assertThat(app.contact().count(),equalTo(before.size()));
-        Contacts after = app.contact().all();
+        Contacts after = app.db().contacts();
         assertThat(after, equalTo(before.without(modifiedContact).withAdded(contact)));
         //     app.getSessionHelper().logout();
     }
 
     @Test
     public void testContactModificationDetailsDown(){
-        Contacts before = app.contact().all();
+        Contacts before = app.db().contacts();
         ContactData modifiedContact = before.iterator().next();
         ContactData contact = new ContactData()
-                .withId(modifiedContact.getId()).withFirstname("Test").withLastname("Testov").withAddress("Test city, Test street, 1").withMobilePhone("+79211234567").withEmail("test@mail.ru");
+                .withId(modifiedContact.getId()).withFirstname("Test").withLastname("Testov")
+                .withAddress("Test city, Test street, 1").withMobilePhone("+79211234567").withEmail("test@mail.ru")
+                .withEmail2("test2@mail.ru").withEmail3("test3@mail.ru").withPhone2("+79211234567")
+                .withWorkPhone("8(812)98737373").withHomePhone("435-8377");
         app.contact().modifyInsideDown(contact);
         assertThat(app.contact().count(),equalTo(before.size()));
-        Contacts after = app.contact().all();
+        Contacts after = app.db().contacts();
         assertThat(after, equalTo(before.without(modifiedContact).withAdded(contact)));
         //     app.getSessionHelper().logout();
     }
 
     @Test
     public void testContactModificationDetailsUp(){
-        Contacts before = app.contact().all();
+        Contacts before = app.db().contacts();
         ContactData modifiedContact = before.iterator().next();
         ContactData contact = new ContactData()
-                .withId(modifiedContact.getId()).withFirstname("Test").withLastname("Testov").withAddress("Test city, Test street, 1").withMobilePhone("+79211234567").withEmail("test@mail.ru");
+                .withId(modifiedContact.getId()).withFirstname("Test").withLastname("Testov")
+                .withAddress("Test city, Test street, 1").withMobilePhone("+79211234567").withEmail("test@mail.ru")
+                .withEmail2("test2@mail.ru").withEmail3("test3@mail.ru").withPhone2("+79211234567")
+                .withWorkPhone("8(812)98737373").withHomePhone("435-8377");
         app.contact().modifyInsideUp(contact);
         assertThat(app.contact().count(),equalTo(before.size()));
-        Contacts after = app.contact().all();
+        Contacts after = app.db().contacts();
         assertThat(after, equalTo(before.without(modifiedContact).withAdded(contact)));
         //   app.getSessionHelper().logout();
     }
