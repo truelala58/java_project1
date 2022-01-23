@@ -6,6 +6,7 @@
             <class name="ru.stqa.project1.addressbook.tests.ContactCreationTests"/>
             <class name="ru.stqa.project1.addressbook.tests.ContactModificationTests"/>
             <class name="ru.stqa.project1.addressbook.tests.ContactDeletionTests"/>
+            <class name="ru.stqa.project1.addressbook.tests.ContactInternalsTests"/>
         </classes>
     </test>
 </suite>
