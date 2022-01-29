@@ -14,7 +14,7 @@ public class ContactModificationTests extends TestBase{
     public void ensurePreconditions () {
         if (app.db().contacts().size()==0) {
             app.goTo().contactPage();
-            app.contact().create(new ContactData().withFirstname("Test").withLastname("Testov"));
+            app.contact().create(new ContactData().withFirstname("Test").withLastname("Testov"), false);
         }
     }
 
@@ -27,10 +27,11 @@ public class ContactModificationTests extends TestBase{
                 .withAddress("Test city, Test street, 1").withMobilePhone("+79211234567").withEmail("test@mail.ru")
                 .withEmail2("test2@mail.ru").withEmail3("test3@mail.ru").withPhone2("+79211234567")
                 .withWorkPhone("8(812)98737373").withHomePhone("435-8377");
-        app.contact().modifyHomeDown(contact);
+        app.contact().modifyHomeDown(contact,false);
         assertThat(app.contact().count(),equalTo(before.size()));
         Contacts after = app.db().contacts();
         assertThat(after, equalTo(before.without(modifiedContact).withAdded(contact)));
+        verifyContactListInUI();
         // app.getSessionHelper().logout();
     }
 
@@ -43,10 +44,11 @@ public class ContactModificationTests extends TestBase{
                 .withAddress("Test city, Test street, 1").withMobilePhone("+79211234567").withEmail("test@mail.ru")
                 .withEmail2("test2@mail.ru").withEmail3("test3@mail.ru").withPhone2("+79211234567")
                 .withWorkPhone("8(812)98737373").withHomePhone("435-8377");
-        app.contact().modifyHomeUp(contact);
+        app.contact().modifyHomeUp(contact, false);
         assertThat(app.contact().count(),equalTo(before.size()));
         Contacts after = app.db().contacts();
         assertThat(after, equalTo(before.without(modifiedContact).withAdded(contact)));
+        verifyContactListInUI();
         //     app.getSessionHelper().logout();
     }
 
@@ -59,10 +61,11 @@ public class ContactModificationTests extends TestBase{
                 .withAddress("Test city, Test street, 1").withMobilePhone("+79211234567").withEmail("test@mail.ru")
                 .withEmail2("test2@mail.ru").withEmail3("test3@mail.ru").withPhone2("+79211234567")
                 .withWorkPhone("8(812)98737373").withHomePhone("435-8377");
-        app.contact().modifyInsideDown(contact);
+        app.contact().modifyInsideDown(contact, false);
         assertThat(app.contact().count(),equalTo(before.size()));
         Contacts after = app.db().contacts();
         assertThat(after, equalTo(before.without(modifiedContact).withAdded(contact)));
+        verifyContactListInUI();
         //     app.getSessionHelper().logout();
     }
 
@@ -75,10 +78,11 @@ public class ContactModificationTests extends TestBase{
                 .withAddress("Test city, Test street, 1").withMobilePhone("+79211234567").withEmail("test@mail.ru")
                 .withEmail2("test2@mail.ru").withEmail3("test3@mail.ru").withPhone2("+79211234567")
                 .withWorkPhone("8(812)98737373").withHomePhone("435-8377");
-        app.contact().modifyInsideUp(contact);
+        app.contact().modifyInsideUp(contact,false);
         assertThat(app.contact().count(),equalTo(before.size()));
         Contacts after = app.db().contacts();
         assertThat(after, equalTo(before.without(modifiedContact).withAdded(contact)));
+        verifyContactListInUI();
         //   app.getSessionHelper().logout();
     }
 

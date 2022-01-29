@@ -11,6 +11,7 @@ import ru.stqa.project1.addressbook.model.ContactData;
 import ru.stqa.project1.addressbook.model.GroupData;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class HbConnectionTest {
 
@@ -37,12 +38,14 @@ public class HbConnectionTest {
     public void testHbConnection(){
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        List<GroupData> result = session.createQuery( "from GroupData" )
+        List<ContactData> result = session.createQuery( "from ContactData" )
                 .list();
-        for ( GroupData groups : result ) {
-            System.out.println(groups);
-        }
         session.getTransaction().commit();
         session.close();
+        for ( ContactData contacts : result ) {
+            System.out.println(contacts);
+            System.out.println(contacts.getGroups());
+        }
     }
+
 }

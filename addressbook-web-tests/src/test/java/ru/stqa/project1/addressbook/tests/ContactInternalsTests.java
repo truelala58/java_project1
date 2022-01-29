@@ -21,7 +21,7 @@ public class ContactInternalsTests extends TestBase{
             app.contact().create(new ContactData().withFirstname("Test").withLastname("Testov")
                     .withHomePhone("+7(912)1234567").withMobilePhone("8(921)765-4321").withWorkPhone("5435627")
                     .withPhone2("8-812-123455").withEmail("test@mail.ru").withEmail2("test2@mail.ru")
-                    .withEmail3("test3@mail.ru").withAddress("Test city, Test street, 1"));
+                    .withEmail3("test3@mail.ru").withAddress("Test city, Test street, 1"),false);
         }
     }
 

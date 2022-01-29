@@ -3,8 +3,13 @@ package ru.stqa.project1.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import ru.stqa.project1.addressbook.model.ContactData;
 import ru.stqa.project1.addressbook.model.Contacts;
+import ru.stqa.project1.addressbook.model.GroupData;
+import ru.stqa.project1.addressbook.model.Groups;
+
 import java.util.List;
 
 
@@ -17,12 +22,15 @@ public class ContactHelper extends HelperBase{
     public void returnToHomePage() {
         click(By.linkText("home page"));
     }
+    public void goToHomePage() {
+        wd.findElement(By.cssSelector("a[href='./']")).click();
+    }
 
     public void submitContactForm() {
         click(By.xpath("//div[@id='content']/form/input[21]"));
     }
 
-    public void fillContactForm(ContactData contactData) {
+    public void fillContactForm(ContactData contactData, boolean creation) {
         type(By.name("firstname"),contactData.getFirstname());
         type(By.name("lastname"),contactData.getLastname());
         type(By.name("address"),contactData.getAddress());
@@ -34,6 +42,15 @@ public class ContactHelper extends HelperBase{
         type(By.name("email2"),contactData.getEmail2());
         type(By.name("email3"),contactData.getEmail3());
  //       attach(By.name("photo"),contactData.getPhoto());
+        if (creation) {
+            if (contactData.getGroups().size()>0){
+                Assert.assertTrue(contactData.getGroups().size()==1);
+                new Select(wd.findElement(By.name("new_group")))
+                        .selectByVisibleText(contactData.getGroups().iterator().next().getName());
+            }else {
+                Assert.assertFalse(isElementPresent(By.name("new_group")));
+            }
+        }
     }
 
     public void selectContactById(int id) {
@@ -75,38 +92,56 @@ public class ContactHelper extends HelperBase{
         return  wd.findElements(By.name("selected[]")).size();
     }
 
-    public void create(ContactData contact) {
-        fillContactForm(contact);
+    public void create(ContactData contact,boolean creation) {
+        fillContactForm(contact, creation);
         submitContactForm();
         returnToHomePage();
     }
 
-    public void modifyHomeDown(ContactData contact) {
+    public void modifyHomeDown(ContactData contact,boolean creation) {
         initContactModificationHomePageById(contact.getId());
-        fillContactForm(contact);
+        fillContactForm(contact, creation);
         submitContactModificationDown();
         returnToHomePage();
     }
 
-    public void modifyHomeUp(ContactData contact) {
+    public void modifyHomeUp(ContactData contact, boolean creation) {
         initContactModificationHomePageById(contact.getId());
-        fillContactForm(contact);
+        fillContactForm(contact, creation);
         submitContactModificationUp();
         returnToHomePage();
     }
+    public void addGroupHome(ContactData contact, GroupData group){
+        goToHomePage();
+        selectContactById(contact.getId());
+        addContactInGroup(contact, group);
+    }
 
-    public void modifyInsideDown(ContactData contact) {
+    public void addContactInGroup(ContactData contact,GroupData group) {
+            if (contact.getGroups().size()>0){
+                    new Select(wd.findElement(By.name("to_group")))
+                            .selectByVisibleText(group.getName());
+                    wd.findElement(By.name("add")).click();
+                    goToHomePage();
+                System.out.println(group.getId());
+                System.out.println(group.getName());
+            } else {
+                Assert.assertFalse(isElementPresent(By.name("to_group")));
+            }
+        }
+
+    public void modifyInsideDown(ContactData contact, boolean creation) {
         initContactDetailsById(contact.getId());
         initContactModificationInside();
-        fillContactForm(contact);
+        fillContactForm(contact, creation);
         submitContactModificationDown();
         returnToHomePage();
     }
 
-    public void modifyInsideUp(ContactData contact) {
+    public void modifyInsideUp(ContactData contact, boolean creation) {
         initContactDetailsById(contact.getId());
         initContactModificationInside();
-        fillContactForm(contact);
+        fillContactForm(contact,creation);
         submitContactModificationUp();
         returnToHomePage();
     }

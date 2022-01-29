@@ -6,9 +6,10 @@ import org.openqa.selenium.json.TypeToken;
 import org.testng.annotations.*;
 import ru.stqa.project1.addressbook.model.ContactData;
 import ru.stqa.project1.addressbook.model.Contacts;
+import ru.stqa.project1.addressbook.model.GroupData;
+import ru.stqa.project1.addressbook.model.Groups;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Iterator;
@@ -52,16 +53,44 @@ public class ContactCreationTests extends TestBase{
       }
   }
 
-    @Test(dataProvider = "validContactsFromJson")
-    public void testCreationContact(ContactData contact) throws Exception {
+    @Test(dataProvider = "validContactsFromJson", enabled = false)
+    public void testCreationContactFromFile(ContactData contact) throws Exception {
+     //   Groups groups = app.db().groups();
         Contacts before = app.db().contacts();
-     //   File photo = new File("src/test/resources/photo.png");
         app.goTo().contactPage();
-        app.contact().create(contact);
+        app.contact().create(contact, true);
         assertThat(app.contact().count(),equalTo(before.size()+1));
         Contacts after = app.db().contacts();
         assertThat(after, equalTo(
                 before.withAdded(contact.withId(after.stream().mapToInt(ContactData::getId).max().getAsInt()))));
+        verifyContactListInUI();
+        //  app.getSessionHelper().logout();
+    }
+
+    @BeforeMethod
+    public void ensurePreconditions(){
+        if (app.db().groups().size()==0){
+            app.goTo().groupPage();
+            app.group().create(new GroupData().withName("test1"));
+        }
+    }
+
+    @Test
+    public void testCreationContactAddGroup() throws Exception {
+        Groups groups = app.db().groups();
+        Contacts before = app.db().contacts();
+        ContactData newContact = new ContactData().withFirstname("Test").withLastname("Testov")
+                .withAddress("Test city, Test street, 1").withMobilePhone("+79211234567").withEmail("test@mail.ru")
+                .withEmail2("test2@mail.ru").withEmail3("test3@mail.ru").withPhone2("+79211234567")
+                .withWorkPhone("8(812)98737373").withHomePhone("435-8377").inGroup(groups.iterator().next());
+        //   File photo = new File("src/test/resources/photo.png");
+        app.goTo().contactPage();
+        app.contact().create(newContact,true);
+        assertThat(app.contact().count(),equalTo(before.size()+1));
+        Contacts after = app.db().contacts();
+        assertThat(after, equalTo(
+                before.withAdded(newContact.withId(after.stream().mapToInt(ContactData::getId).max().getAsInt()))));
+        verifyContactListInUI();
         //  app.getSessionHelper().logout();
     }
 
