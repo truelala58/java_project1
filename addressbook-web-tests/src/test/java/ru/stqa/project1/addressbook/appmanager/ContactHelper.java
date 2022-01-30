@@ -7,8 +7,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.project1.addressbook.model.ContactData;
 import ru.stqa.project1.addressbook.model.Contacts;
-import ru.stqa.project1.addressbook.model.GroupData;
-import ru.stqa.project1.addressbook.model.Groups;
 
 import java.util.List;
 
@@ -114,25 +112,21 @@ public class ContactHelper extends HelperBase{
         submitContactModificationUp();
         returnToHomePage();
     }
-    public void addGroupHome(ContactData contact, GroupData group){
+    public void addGroupHome(ContactData contact,int id){
         goToHomePage();
         selectContactById(contact.getId());
-        addContactInGroup(contact, group);
+        addContactInGroup(id);
     }
 
-    public void addContactInGroup(ContactData contact,GroupData group) {
-            if (contact.getId()!=0){
-                    new Select(wd.findElement(By.name("to_group")))
-                            .selectByVisibleText(group.getName());
+    public void addContactInGroup(int id) {
+        Assert.assertTrue(isElementPresent(By.xpath("//select[@name='to_group']")));
+        wd.findElement(By.xpath("//select[@name='to_group']//option[@value='" + id + "']")).click();
                     wd.findElement(By.name("add")).click();
                     goToHomePage();
-            } else {
-                Assert.assertFalse(isElementPresent(By.name("to_group")));
-            }
         }
     public void removeGroupHome (ContactData contact, int id) {
+        selectGroup(id);
         selectContactById(contact.getId());
-    //    selectGroup(group);
         removeFromGroup(id);
     }
 
@@ -141,11 +135,12 @@ public class ContactHelper extends HelperBase{
         returnToGroupPage(id);
     }
 
-    public void selectGroup(GroupData group) {
+    public void selectGroup(int id) {
         goToHomePage();
         Assert.assertTrue(isElementPresent(By.xpath("//select[@name='group']")));
-            new Select(wd.findElement(By.xpath("//select[@name='group']")))
-                    .selectByVisibleText(group.getName());
+        wd.findElement(By.xpath("//select[@name='group']//option[@value='" + id + "']")).click();
+            /*new Select(wd.findElement(By.xpath("//select[@name='group']")))
+                    .selectByVisibleText(group.getName());*/
     }
 
     public void modifyInsideDown(ContactData contact, boolean creation) {

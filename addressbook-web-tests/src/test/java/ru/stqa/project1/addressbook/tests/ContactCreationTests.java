@@ -53,12 +53,12 @@ public class ContactCreationTests extends TestBase{
       }
   }
 
-    @Test(dataProvider = "validContactsFromJson", enabled = false)
+    @Test(dataProvider = "validContactsFromJson", enabled = true)
     public void testCreationContactFromFile(ContactData contact) throws Exception {
      //   Groups groups = app.db().groups();
         Contacts before = app.db().contacts();
         app.goTo().contactPage();
-        app.contact().create(contact, true);
+        app.contact().create(contact, false);
         assertThat(app.contact().count(),equalTo(before.size()+1));
         Contacts after = app.db().contacts();
         assertThat(after, equalTo(
@@ -67,7 +67,7 @@ public class ContactCreationTests extends TestBase{
         //  app.getSessionHelper().logout();
     }
 
-    @BeforeMethod
+    @BeforeTest
     public void ensurePreconditions(){
         if (app.db().groups().size()==0){
             app.goTo().groupPage();
@@ -75,7 +75,7 @@ public class ContactCreationTests extends TestBase{
         }
     }
 
-    @Test
+    @Test(enabled = false)
     public void testCreationContactAddGroup() throws Exception {
         Groups groups = app.db().groups();
         Contacts before = app.db().contacts();
