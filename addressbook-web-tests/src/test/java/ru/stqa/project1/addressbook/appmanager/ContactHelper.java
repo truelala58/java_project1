@@ -22,6 +22,9 @@ public class ContactHelper extends HelperBase{
     public void returnToHomePage() {
         click(By.linkText("home page"));
     }
+    public void returnToGroupPage(int id) {
+        wd.findElement(By.cssSelector("a[href='./?group=" + id + "'")).click();
+    }
     public void goToHomePage() {
         wd.findElement(By.cssSelector("a[href='./']")).click();
     }
@@ -118,17 +121,32 @@ public class ContactHelper extends HelperBase{
     }
 
     public void addContactInGroup(ContactData contact,GroupData group) {
-            if (contact.getGroups().size()>0){
+            if (contact.getId()!=0){
                     new Select(wd.findElement(By.name("to_group")))
                             .selectByVisibleText(group.getName());
                     wd.findElement(By.name("add")).click();
                     goToHomePage();
-                System.out.println(group.getId());
-                System.out.println(group.getName());
             } else {
                 Assert.assertFalse(isElementPresent(By.name("to_group")));
             }
         }
+    public void removeGroupHome (ContactData contact, int id) {
+        selectContactById(contact.getId());
+    //    selectGroup(group);
+        removeFromGroup(id);
+    }
+
+    public void removeFromGroup(int id) {
+        click(By.name("remove"));
+        returnToGroupPage(id);
+    }
+
+    public void selectGroup(GroupData group) {
+        goToHomePage();
+        Assert.assertTrue(isElementPresent(By.xpath("//select[@name='group']")));
+            new Select(wd.findElement(By.xpath("//select[@name='group']")))
+                    .selectByVisibleText(group.getName());
+    }
 
     public void modifyInsideDown(ContactData contact, boolean creation) {
         initContactDetailsById(contact.getId());

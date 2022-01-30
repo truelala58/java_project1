@@ -12,7 +12,7 @@ import java.util.UUID;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class ContactInOutGroups extends TestBase{
+public class ContactInOutGroups extends TestBase {
     @BeforeMethod
     public void ensurePreconditions() {
         if (app.db().groups().size() == 0) {
@@ -35,43 +35,37 @@ public class ContactInOutGroups extends TestBase{
         Groups groups = app.db().groups();
         Contacts before = app.db().contacts();
         ContactData modifiedContact = before.iterator().next();
-        Groups groupsForAdd = getGroupForAdd(modifiedContact, groups);
-        System.out.println(groupsForAdd);
-        ContactData modifiedContactInGroup = modifiedContact.inGroup(groupsForAdd.iterator().next());
-        System.out.println(groupsForAdd.iterator().next());
-        app.contact().addGroupHome(modifiedContact,groupsForAdd.iterator().next());
-        assertThat(app.contact().count(),equalTo(before.size()));
+        Groups groupsForAdd = getGroupForAdd(modifiedContact, groups);;
+        app.contact().addGroupHome(modifiedContact, groupsForAdd.iterator().next());
         Contacts after = app.db().contacts();
-        System.out.println(after);
-        System.out.println(before.without(modifiedContact).withAdded(modifiedContact));
-        assertThat(after, equalTo(before.without(modifiedContactInGroup).withAdded(modifiedContact)));
+        assertThat(after, equalTo(before.withAdded(modifiedContact.inGroup(groupsForAdd.iterator().next()))));
     }
+
     @Test
     public void testModifyContactRemoveGroup() throws Exception {
         Groups groups = app.db().groups();
-        Contacts before = app.db().contacts();
-        ContactData modifiedContact = before.iterator().next();
-        Groups groupsForAdd = getGroupForAdd(modifiedContact, groups);
-        System.out.println(groupsForAdd);
-        ContactData modifiedContactInGroup = modifiedContact.inGroup(groupsForAdd.iterator().next());
-        System.out.println(groupsForAdd.iterator().next());
-        app.contact().addGroupHome(modifiedContact,groupsForAdd.iterator().next());
-        assertThat(app.contact().count(),equalTo(before.size()));
-        Contacts after = app.db().contacts();
-        System.out.println(after);
-        System.out.println(before.without(modifiedContact).withAdded(modifiedContact));
-        assertThat(after, equalTo(before.without(modifiedContactInGroup).withAdded(modifiedContact)));
+        Contacts contacts = app.db().contacts();
+        Groups groupsForRemove = getGroupForRemove(contacts,groups);
+        GroupData groupForRemove = groupsForRemove.iterator().next();
+        app.contact().selectGroup(groupForRemove);
+        Contacts before = app.contact().all();
+        ContactData modifiedContactWithGroups = before.iterator().next();
+        app.contact().removeGroupHome(modifiedContactWithGroups,groupForRemove.getId());
+        Groups afterModifiedGroups = modifiedContactWithGroups.getGroups();
+        assertThat(afterModifiedGroups, equalTo(groupsForRemove.without(groupsForRemove.iterator().next())));
     }
-    public Groups getGroupForAdd(ContactData contact, Groups groups){
+
+    public Groups getGroupForAdd(ContactData contact, Groups groups) {
         Groups groupsForAdd = new Groups();
-        for (GroupData group: groups) {
+        for (GroupData group : groups) {
             if (!contact.getGroups().contains(group)) {
                 groupsForAdd.add(group);
             }
         }
-        if (groupsForAdd.size()==0) {
+        if (groupsForAdd.size() == 0) {
+            String name = UUID.randomUUID().toString();
             app.goTo().groupPage();
-            GroupData group = new GroupData().withName("test1").withHeader("test2").withFooter("test3");
+            GroupData group = new GroupData().withName(name).withHeader("test2").withFooter("test3");
             app.group().create(group);
             Groups groupsDbNew = app.db().groups();
             groupsForAdd.add(group.withId(groupsDbNew.stream().mapToInt(GroupData::getId).max().getAsInt()));
@@ -79,4 +73,22 @@ public class ContactInOutGroups extends TestBase{
         return groupsForAdd;
     }
 
+    public Groups getGroupForRemove(Contacts contacts, Groups groups) {
+        Groups groupsForRemove = new Groups();
+        for (ContactData contact: contacts){
+            if (contact.getGroups().size()>0){
+                groupsForRemove.add(contact.getGroups().iterator().next());
+            }
+        }
+        if (groupsForRemove.size() == 0 & groups.size()>0) {
+                ContactData modifiedContact = contacts.iterator().next();
+                app.contact().addGroupHome(modifiedContact, groups.iterator().next());
+                groupsForRemove.add(groups.iterator().next());
+
+        } 
+        return groupsForRemove;
+    }
+
 }
+
+
