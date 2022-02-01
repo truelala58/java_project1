@@ -50,5 +50,6 @@ import java.util.List;
             String body = geTextForm(response);
             return body.contains(String.format("<span class=\"user-info\">%s</span>", username));
         }
+
     }
 

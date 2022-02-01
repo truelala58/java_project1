@@ -20,6 +20,8 @@ public class ApplicationManager {
     private FtpHelper ftp;
     private MailHelper mailHelper;
     private JamesHelper jamesHelper;
+    private UsersHelper userHelper;
+    private DbHelper dbHelper;
 
 
     public ApplicationManager(String browser)  {
@@ -53,6 +55,13 @@ public class ApplicationManager {
         }
         return registrationHelper;
     }
+    public UsersHelper user() {
+        if (userHelper == null) {
+            userHelper = new UsersHelper(this);
+        }
+        return userHelper;
+    }
+
     public FtpHelper ftp(){
         if (ftp ==null) {
             ftp = new FtpHelper(this);
@@ -84,4 +93,13 @@ public class ApplicationManager {
         }
         return jamesHelper;
     }
+    public DbHelper db() {
+        if (dbHelper == null) {
+            dbHelper = new DbHelper(this);
+        }
+        return dbHelper;
+    }
+   // public DbHelper db(){
+   //     return dbHelper;
+   // }
 }
