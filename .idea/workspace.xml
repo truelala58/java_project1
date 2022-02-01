@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46c85cb9-28a9-4d87-9d8a-be871777eaea" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mantis-tests/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/mantis-tests/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mantis-tests/out/test/classes/ru/stqa/project1/mantis/appmanager/ApplicationManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/mantis-tests/out/test/classes/ru/stqa/project1/mantis/appmanager/ApplicationManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mantis-tests/out/test/classes/ru/stqa/project1/mantis/tests/RegistrationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/mantis-tests/out/test/classes/ru/stqa/project1/mantis/tests/RegistrationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mantis-tests/out/test/classes/ru/stqa/project1/mantis/tests/TestBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/mantis-tests/out/test/classes/ru/stqa/project1/mantis/tests/TestBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mantis-tests/out/test/resources/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mantis-tests/out/test/resources/local.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mantis-tests/src/test/java/ru/stqa/project1/mantis/appmanager/ApplicationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/mantis-tests/src/test/java/ru/stqa/project1/mantis/appmanager/ApplicationManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mantis-tests/src/test/java/ru/stqa/project1/mantis/tests/RegistrationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/mantis-tests/src/test/java/ru/stqa/project1/mantis/tests/RegistrationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mantis-tests/src/test/java/ru/stqa/project1/mantis/tests/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/mantis-tests/src/test/java/ru/stqa/project1/mantis/tests/TestBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mantis-tests/src/test/resources/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mantis-tests/src/test/resources/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,6 +81,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="ru.stqa.project1.mantis.appmanager" />
       <recent name="ru.stqa.project1.addressbook.appmanager" />
       <recent name="ru.stqa.project1.addressbook" />
     </key>
@@ -89,7 +95,7 @@
       <recent name="ru.stqa.project1.addressbook.tests" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.LoginTests.testLogin">
+  <component name="RunManager" selected="TestNG.RegistrationTests.testRegistration">
     <configuration name="ContactDataGenerator" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.stqa.project1.addressbook.generators.ContactDataGenerator" />
       <module name="addressbook-web-tests.test" />
@@ -128,60 +134,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ContactCreationTests.testCreationContactAddGroup" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="addressbook-web-tests.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.stqa.project1.addressbook.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.stqa.project1.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.stqa.project1.addressbook.tests.ContactCreationTests" />
-      <option name="METHOD_NAME" value="testCreationContactAddGroup" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ContactCreationTests.testCreationContactFromFile" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="addressbook-web-tests.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.stqa.project1.addressbook.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.stqa.project1.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.stqa.project1.addressbook.tests.ContactCreationTests" />
-      <option name="METHOD_NAME" value="testCreationContactFromFile" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ContactInOutGroups.testModifyContactAddGroup" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="addressbook-web-tests.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.stqa.project1.addressbook.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.stqa.project1.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.stqa.project1.addressbook.tests.ContactInOutGroups" />
-      <option name="METHOD_NAME" value="testModifyContactAddGroup" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="GroupCreationTests.testGroupCreation" type="TestNG" nameIsGenerated="true">
       <module name="addressbook-web-tests.test" />
       <shortenClasspath name="NONE" />
@@ -211,6 +163,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LoginTests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="mantis-tests.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.stqa.project1.mantis.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.stqa.project1.mantis.tests" />
+      <option name="MAIN_CLASS_NAME" value="ru.stqa.project1.mantis.tests.LoginTests" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LoginTests.testLogin" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="mantis-tests.test" />
       <extension name="coverage">
@@ -229,22 +198,57 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RegistrationTests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="mantis-tests.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.stqa.project1.mantis.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.stqa.project1.mantis.tests" />
+      <option name="MAIN_CLASS_NAME" value="ru.stqa.project1.mantis.tests.RegistrationTests" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegistrationTests.testRegistration" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="mantis-tests.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.stqa.project1.mantis.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.stqa.project1.mantis.tests" />
+      <option name="MAIN_CLASS_NAME" value="ru.stqa.project1.mantis.tests.RegistrationTests" />
+      <option name="METHOD_NAME" value="testRegistration" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.ContactDataGenerator" />
       <item itemvalue="TestNG.GroupCreationTests.testGroupCreation" />
-      <item itemvalue="TestNG.ContactCreationTests.testCreationContactAddGroup" />
-      <item itemvalue="TestNG.ContactInOutGroups.testModifyContactAddGroup" />
-      <item itemvalue="TestNG.ContactCreationTests.testCreationContactFromFile" />
       <item itemvalue="Gradle.LoginTests.testLogin" />
       <item itemvalue="TestNG.LoginTests.testLogin" />
+      <item itemvalue="TestNG.RegistrationTests" />
+      <item itemvalue="TestNG.LoginTests" />
+      <item itemvalue="TestNG.RegistrationTests.testRegistration" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.RegistrationTests.testRegistration" />
+        <item itemvalue="TestNG.LoginTests" />
+        <item itemvalue="TestNG.RegistrationTests" />
         <item itemvalue="TestNG.LoginTests.testLogin" />
         <item itemvalue="Gradle.LoginTests.testLogin" />
-        <item itemvalue="TestNG.ContactInOutGroups.testModifyContactAddGroup" />
-        <item itemvalue="TestNG.ContactCreationTests.testCreationContactFromFile" />
-        <item itemvalue="TestNG.ContactCreationTests.testCreationContactAddGroup" />
       </list>
     </recent_temporary>
   </component>
@@ -283,6 +287,11 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="18" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mantis-tests/src/test/java/ru/stqa/project1/mantis/tests/RegistrationTests.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
