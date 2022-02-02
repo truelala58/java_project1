@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46c85cb9-28a9-4d87-9d8a-be871777eaea" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mantis-tests/src/test/java/ru/stqa/project1/mantis/tests/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/mantis-tests/src/test/java/ru/stqa/project1/mantis/tests/TestBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-sample/out/test/classes/ru/stqa/project1/rest/Issue.class" beforeDir="false" afterPath="$PROJECT_DIR$/rest-sample/out/test/classes/ru/stqa/project1/rest/Issue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-sample/out/test/classes/ru/stqa/project1/rest/RestTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/rest-sample/out/test/classes/ru/stqa/project1/rest/RestTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-sample/src/test/java/ru/stqa/project1/rest/Issue.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest-sample/src/test/java/ru/stqa/project1/rest/Issue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-sample/src/test/java/ru/stqa/project1/rest/RestTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest-sample/src/test/java/ru/stqa/project1/rest/RestTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,17 +196,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginTests.testLogin" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="mantis-tests.test" />
+    <configuration name="RestAssuredTests.testCreateIssue" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="rest-sample.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.stqa.project1.mantis.tests.*" />
+          <option name="PATTERN" value="ru.stqa.project1.rest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ru.stqa.project1.mantis.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.stqa.project1.mantis.tests.LoginTests" />
-      <option name="METHOD_NAME" value="testLogin" />
+      <option name="PACKAGE_NAME" value="ru.stqa.project1.rest" />
+      <option name="MAIN_CLASS_NAME" value="ru.stqa.project1.rest.RestAssuredTests" />
+      <option name="METHOD_NAME" value="testCreateIssue" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -252,18 +254,18 @@
       <item itemvalue="Application.ContactDataGenerator" />
       <item itemvalue="TestNG.GroupCreationTests.testGroupCreation" />
       <item itemvalue="TestNG.SoapTests.testGetProjects" />
-      <item itemvalue="TestNG.LoginTests.testLogin" />
       <item itemvalue="TestNG.ChangePasswordTests.testChangePassword" />
       <item itemvalue="Gradle.RestTests.testCreateIssue" />
       <item itemvalue="TestNG.RestTests.testCreateIssue" />
+      <item itemvalue="TestNG.RestAssuredTests.testCreateIssue" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.RestTests.testCreateIssue" />
+        <item itemvalue="TestNG.RestAssuredTests.testCreateIssue" />
         <item itemvalue="Gradle.RestTests.testCreateIssue" />
         <item itemvalue="TestNG.SoapTests.testGetProjects" />
         <item itemvalue="TestNG.ChangePasswordTests.testChangePassword" />
-        <item itemvalue="TestNG.LoginTests.testLogin" />
       </list>
     </recent_temporary>
   </component>

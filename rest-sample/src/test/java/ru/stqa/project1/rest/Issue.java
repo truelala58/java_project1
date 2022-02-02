@@ -46,10 +46,6 @@ public class Issue {
         return this;
     }
 
-    public Issue withGetStatus(String Status) {
-        this.state_name = Status;
-        return this;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -66,10 +62,8 @@ public class Issue {
     @Override
     public String toString() {
         return "Issue{" +
-                "id=" + id +
-                ", subject='" + subject + '\'' +
+                  "subject='" + subject + '\'' +
                 ", description='" + description + '\'' +
-                ", state_name='" + state_name + '\'' +
                 '}';
     }
 }
