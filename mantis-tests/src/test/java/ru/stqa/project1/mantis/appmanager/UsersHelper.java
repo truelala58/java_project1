@@ -11,7 +11,7 @@ public class UsersHelper extends HelperBase{
         }
 
         public void login (String username, String password){
-            wd.get(app.getProperty("web.baseUrl") + "/mantisbt-2.25.2/login_page.php");
+            wd.get(app.getProperty("web.baseUrl") + "/login_page.php");
             type(By.name("username"),username);
             click(By.cssSelector("input[value='Вход']"));
             type(By.name("password"),password);
@@ -28,8 +28,8 @@ public class UsersHelper extends HelperBase{
                     id = user.getId();
                 }
             }
-                click(By.cssSelector("a[href='/mantisbt-2.25.2/mantisbt-2.25.2/manage_overview_page.php']"));
-                click(By.cssSelector("a[href='/mantisbt-2.25.2/mantisbt-2.25.2/manage_user_page.php']"));
+                click(By.cssSelector("a[href='/mantisbt-2.25.2/manage_overview_page.php']"));
+                click(By.cssSelector("a[href='/mantisbt-2.25.2/manage_user_page.php']"));
                 click(By.cssSelector("a[href='manage_user_edit_page.php?user_id=" + id + "'"));
                 click(By.cssSelector("input[value='Сбросить пароль']"));
 

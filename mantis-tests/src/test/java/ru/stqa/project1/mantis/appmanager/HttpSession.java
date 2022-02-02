@@ -24,7 +24,7 @@ import java.util.List;
         }
 
         public boolean login(String username, String password) throws IOException {
-            HttpPost post = new HttpPost(app.getProperty("web.baseUrl") + "/mantisbt-2.25.2/login.php");
+            HttpPost post = new HttpPost(app.getProperty("web.baseUrl") + "/login.php");
             List<BasicNameValuePair> params = new ArrayList<>();
             params.add(new BasicNameValuePair("username", username));
             params.add(new BasicNameValuePair("password", password));
@@ -45,7 +45,7 @@ import java.util.List;
         }
 
         public boolean isLoggedInAs(String username) throws IOException {
-            HttpGet get = new HttpGet(app.getProperty("web.baseUrl") + "/mantisbt-2.25.2/my_view_page.php");
+            HttpGet get = new HttpGet(app.getProperty("web.baseUrl") + "/my_view_page.php");
             CloseableHttpResponse response = httpClient.execute(get);
             String body = geTextForm(response);
             return body.contains(String.format("<span class=\"user-info\">%s</span>", username));
