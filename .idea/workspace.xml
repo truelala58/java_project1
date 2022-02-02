@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46c85cb9-28a9-4d87-9d8a-be871777eaea" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest-sample/out/test/classes/ru/stqa/project1/rest/Issue.class" beforeDir="false" afterPath="$PROJECT_DIR$/rest-sample/out/test/classes/ru/stqa/project1/rest/Issue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest-sample/out/test/classes/ru/stqa/project1/rest/RestTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/rest-sample/out/test/classes/ru/stqa/project1/rest/RestTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest-sample/src/test/java/ru/stqa/project1/rest/Issue.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest-sample/src/test/java/ru/stqa/project1/rest/Issue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest-sample/src/test/java/ru/stqa/project1/rest/RestTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest-sample/src/test/java/ru/stqa/project1/rest/RestTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-sample/src/test/java/ru/stqa/project1/rest/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest-sample/src/test/java/ru/stqa/project1/rest/TestBase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
