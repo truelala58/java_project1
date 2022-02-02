@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46c85cb9-28a9-4d87-9d8a-be871777eaea" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mantis-tests/src/test/java/ru/stqa/project1/mantis/appmanager/SoapHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mantis-tests/src/test/java/ru/stqa/project1/mantis/appmanager/SoapHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mantis-tests/src/test/java/ru/stqa/project1/mantis/tests/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/mantis-tests/src/test/java/ru/stqa/project1/mantis/tests/TestBase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +24,9 @@
     <projectState path="$PROJECT_DIR$/mantis-tests">
       <ProjectState />
     </projectState>
+    <projectState path="$PROJECT_DIR$/rest-sample">
+      <ProjectState />
+    </projectState>
     <projectState path="$PROJECT_DIR$/sandbox">
       <ProjectState />
     </projectState>
@@ -38,6 +41,9 @@
           <activation />
         </task>
         <task path="$PROJECT_DIR$/mantis-tests">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/rest-sample">
           <activation />
         </task>
         <projects_view>
@@ -79,13 +85,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/mantis-tests/src/test/resources" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="ru.stqa.project1.rest" />
       <recent name="ru.stqa.project1.mantis.appmanager" />
       <recent name="ru.stqa.project1.addressbook.appmanager" />
       <recent name="ru.stqa.project1.addressbook" />
@@ -95,12 +102,13 @@
       <recent name="$PROJECT_DIR$/addressbook-web-tests/src/test/resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.stqa.project1.rest" />
       <recent name="ru.stqa.project1.mantis.tests" />
       <recent name="ru.stqa.project1.mantis.appmanager" />
       <recent name="ru.stqa.project1.addressbook.tests" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.SoapTests.testGetProjects">
+  <component name="RunManager" selected="TestNG.RestTests.testCreateIssue">
     <configuration name="ContactDataGenerator" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.stqa.project1.addressbook.generators.ContactDataGenerator" />
       <module name="addressbook-web-tests.test" />
@@ -115,6 +123,29 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="RestTests.testCreateIssue" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/rest-sample" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ru.stqa.project1.rest.RestTests.testCreateIssue&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
     <configuration name="ChangePasswordTests.testChangePassword" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="mantis-tests.test" />
@@ -181,34 +212,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RegistrationTests.testRegistration" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="mantis-tests.test" />
+    <configuration name="RestTests.testCreateIssue" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="rest-sample.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.stqa.project1.mantis.tests.*" />
+          <option name="PATTERN" value="ru.stqa.project1.rest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ru.stqa.project1.mantis.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.stqa.project1.mantis.tests.RegistrationTests" />
-      <option name="METHOD_NAME" value="testRegistration" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SoapTests.testCreateIssue" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="mantis-tests.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.stqa.project1.mantis.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.stqa.project1.mantis.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.stqa.project1.mantis.tests.SoapTests" />
+      <option name="PACKAGE_NAME" value="ru.stqa.project1.rest" />
+      <option name="MAIN_CLASS_NAME" value="ru.stqa.project1.rest.RestTests" />
       <option name="METHOD_NAME" value="testCreateIssue" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -238,19 +251,19 @@
     <list>
       <item itemvalue="Application.ContactDataGenerator" />
       <item itemvalue="TestNG.GroupCreationTests.testGroupCreation" />
-      <item itemvalue="TestNG.RegistrationTests.testRegistration" />
       <item itemvalue="TestNG.SoapTests.testGetProjects" />
-      <item itemvalue="TestNG.SoapTests.testCreateIssue" />
       <item itemvalue="TestNG.LoginTests.testLogin" />
       <item itemvalue="TestNG.ChangePasswordTests.testChangePassword" />
+      <item itemvalue="Gradle.RestTests.testCreateIssue" />
+      <item itemvalue="TestNG.RestTests.testCreateIssue" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.RestTests.testCreateIssue" />
+        <item itemvalue="Gradle.RestTests.testCreateIssue" />
         <item itemvalue="TestNG.SoapTests.testGetProjects" />
         <item itemvalue="TestNG.ChangePasswordTests.testChangePassword" />
         <item itemvalue="TestNG.LoginTests.testLogin" />
-        <item itemvalue="TestNG.RegistrationTests.testRegistration" />
-        <item itemvalue="TestNG.SoapTests.testCreateIssue" />
       </list>
     </recent_temporary>
   </component>

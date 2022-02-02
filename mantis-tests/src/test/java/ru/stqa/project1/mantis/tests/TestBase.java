@@ -19,16 +19,17 @@ public class TestBase {
             new ApplicationManager(System.getProperty("browser", BrowserType.CHROME));
 
     @BeforeSuite(alwaysRun = true)
-    public void setUp() throws Exception {
+    public void setUp() throws IOException {
         app.init();
-        app.ftp().upload(new File("src/test/resources/config.inc.php"),"config.inc.php","config_bak.inc.php");
+        app.ftp().upload(new File("src/test/resources/config_inc.php"), "config_inc.php", "config_inc.php.bak");
     }
 
     @AfterSuite(alwaysRun = true)
     public void tearDown() throws IOException {
-        app.ftp().restore("config.inc_bak.php","config.inc.php");
+        app.ftp().restore("config_inc.php.bak", "config_inc.php");
         app.stop();
     }
+
     public boolean isIssueOpen(int issueId) throws RemoteException, ServiceException, MalformedURLException {
         if ((app.soap().getIssueStatus(issueId).equals("closed"))||(app.soap()
                 .getIssueStatus(issueId).equals("resolved"))){
