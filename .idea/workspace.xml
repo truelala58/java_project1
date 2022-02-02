@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46c85cb9-28a9-4d87-9d8a-be871777eaea" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/rest-sample/src/test/java/ru/stqa/project1/rest/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest-sample/src/test/java/ru/stqa/project1/rest/TestBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook-web-tests/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sandbox/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +20,9 @@
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$/addressbook-web-tests">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/github-sample">
       <ProjectState />
     </projectState>
     <projectState path="$PROJECT_DIR$/mantis-tests">
@@ -106,7 +112,7 @@
       <recent name="ru.stqa.project1.addressbook.tests" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.RestTests.testCreateIssue">
+  <component name="RunManager" selected="TestNG.GithubTests.testCommits">
     <configuration name="ContactDataGenerator" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.stqa.project1.addressbook.generators.ContactDataGenerator" />
       <module name="addressbook-web-tests.test" />
@@ -145,17 +151,17 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ChangePasswordTests.testChangePassword" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="mantis-tests.test" />
+    <configuration name="GithubTests.testCommits" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="github-sample.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.stqa.project1.mantis.tests.*" />
+          <option name="PATTERN" value="ru.stqa.project1.github.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ru.stqa.project1.mantis.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.stqa.project1.mantis.tests.ChangePasswordTests" />
-      <option name="METHOD_NAME" value="testChangePassword" />
+      <option name="PACKAGE_NAME" value="ru.stqa.project1.github" />
+      <option name="MAIN_CLASS_NAME" value="ru.stqa.project1.github.GithubTests" />
+      <option name="METHOD_NAME" value="testCommits" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -250,18 +256,18 @@
       <item itemvalue="Application.ContactDataGenerator" />
       <item itemvalue="TestNG.GroupCreationTests.testGroupCreation" />
       <item itemvalue="TestNG.SoapTests.testGetProjects" />
-      <item itemvalue="TestNG.ChangePasswordTests.testChangePassword" />
       <item itemvalue="Gradle.RestTests.testCreateIssue" />
       <item itemvalue="TestNG.RestTests.testCreateIssue" />
       <item itemvalue="TestNG.RestAssuredTests.testCreateIssue" />
+      <item itemvalue="TestNG.GithubTests.testCommits" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.GithubTests.testCommits" />
         <item itemvalue="TestNG.RestTests.testCreateIssue" />
         <item itemvalue="TestNG.RestAssuredTests.testCreateIssue" />
         <item itemvalue="Gradle.RestTests.testCreateIssue" />
         <item itemvalue="TestNG.SoapTests.testGetProjects" />
-        <item itemvalue="TestNG.ChangePasswordTests.testChangePassword" />
       </list>
     </recent_temporary>
   </component>
