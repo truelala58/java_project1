@@ -196,27 +196,6 @@ public class ContactData {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        ContactData that = (ContactData) o;
-
-        if (id != that.id) return false;
-        if (firstname != null ? !firstname.equals(that.firstname) : that.firstname != null) return false;
-        if (lastname != null ? !lastname.equals(that.lastname) : that.lastname != null) return false;
-        if (address != null ? !address.equals(that.address) : that.address != null) return false;
-        if (homePhone != null ? !homePhone.equals(that.homePhone) : that.homePhone != null) return false;
-        if (mobilePhone != null ? !mobilePhone.equals(that.mobilePhone) : that.mobilePhone != null) return false;
-        if (workPhone != null ? !workPhone.equals(that.workPhone) : that.workPhone != null) return false;
-        if (phone2 != null ? !phone2.equals(that.phone2) : that.phone2 != null) return false;
-        if (email != null ? !email.equals(that.email) : that.email != null) return false;
-        if (email2 != null ? !email2.equals(that.email2) : that.email2 != null) return false;
-        if (email3 != null ? !email3.equals(that.email3) : that.email3 != null) return false;
-        return groups != null ? groups.equals(that.groups) : that.groups == null;
-    }
-
-    @Override
     public String toString() {
         return "ContactData{" +
                 "id=" + id +
@@ -234,6 +213,41 @@ public class ContactData {
                 '}';
     }
 
+    public ContactData withId(int id) {
+        this.id = id;
+        return this;
+    }
+
+    public ContactData inGroup(GroupData group) {
+        groups.add(group);
+        return this;
+    }
+    public ContactData outGroup(GroupData group) {
+       groups.remove(group);
+        return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        ContactData that = (ContactData) o;
+
+        if (id != that.id) return false;
+        if (firstname != null ? !firstname.equals(that.firstname) : that.firstname != null) return false;
+        if (lastname != null ? !lastname.equals(that.lastname) : that.lastname != null) return false;
+        if (address != null ? !address.equals(that.address) : that.address != null) return false;
+        if (homePhone != null ? !homePhone.equals(that.homePhone) : that.homePhone != null) return false;
+        if (mobilePhone != null ? !mobilePhone.equals(that.mobilePhone) : that.mobilePhone != null) return false;
+        if (workPhone != null ? !workPhone.equals(that.workPhone) : that.workPhone != null) return false;
+        if (phone2 != null ? !phone2.equals(that.phone2) : that.phone2 != null) return false;
+        if (email != null ? !email.equals(that.email) : that.email != null) return false;
+        if (email2 != null ? !email2.equals(that.email2) : that.email2 != null) return false;
+        if (email3 != null ? !email3.equals(that.email3) : that.email3 != null) return false;
+        return photo != null ? photo.equals(that.photo) : that.photo == null;
+    }
+
     @Override
     public int hashCode() {
         int result = id;
@@ -247,21 +261,7 @@ public class ContactData {
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + (email2 != null ? email2.hashCode() : 0);
         result = 31 * result + (email3 != null ? email3.hashCode() : 0);
-        result = 31 * result + (groups != null ? groups.hashCode() : 0);
+        result = 31 * result + (photo != null ? photo.hashCode() : 0);
         return result;
-    }
-
-    public ContactData withId(int id) {
-        this.id = id;
-        return this;
-    }
-
-    public ContactData inGroup(GroupData group) {
-        groups.add(group);
-        return this;
-    }
-    public ContactData outGroup(GroupData group) {
-       groups.remove(group);
-        return this;
     }
 }
