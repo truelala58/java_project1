@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="46c85cb9-28a9-4d87-9d8a-be871777eaea" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook-web-tests/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/project1/addressbook/appmanager/ApplicationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/project1/addressbook/appmanager/ApplicationManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +111,7 @@
       <recent name="ru.stqa.project1.addressbook.tests" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GroupModificationTests.testGroupModification">
+  <component name="RunManager" selected="TestNG.ContactCreationTests.testCreationContactFromFile">
     <configuration name="ContactDataGenerator" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.stqa.project1.addressbook.generators.ContactDataGenerator" />
       <module name="addressbook-web-tests.test" />
@@ -125,6 +127,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ContactCreationTests.testCreationContactFromFile" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="addressbook-web-tests.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.stqa.project1.addressbook.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.stqa.project1.addressbook.tests" />
+      <option name="MAIN_CLASS_NAME" value="ru.stqa.project1.addressbook.tests.ContactCreationTests" />
+      <option name="METHOD_NAME" value="testCreationContactFromFile" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ContactModificationTests.testContactModificationEditionDown" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-tests.test" />
       <extension name="coverage">
@@ -136,24 +156,6 @@
       <option name="PACKAGE_NAME" value="ru.stqa.project1.addressbook.tests" />
       <option name="MAIN_CLASS_NAME" value="ru.stqa.project1.addressbook.tests.ContactModificationTests" />
       <option name="METHOD_NAME" value="testContactModificationEditionDown" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GithubTests.testCommits" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="github-sample.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.stqa.project1.github.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.stqa.project1.github" />
-      <option name="MAIN_CLASS_NAME" value="ru.stqa.project1.github.GithubTests" />
-      <option name="METHOD_NAME" value="testCommits" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -246,19 +248,19 @@
     <list>
       <item itemvalue="Application.ContactDataGenerator" />
       <item itemvalue="TestNG.GroupCreationTests.testGroupCreation" />
-      <item itemvalue="TestNG.GithubTests.testCommits" />
       <item itemvalue="TestNG.PointTests.testDistanceFirst" />
       <item itemvalue="TestNG.PointTests" />
       <item itemvalue="TestNG.ContactModificationTests.testContactModificationEditionDown" />
       <item itemvalue="TestNG.GroupModificationTests.testGroupModification" />
+      <item itemvalue="TestNG.ContactCreationTests.testCreationContactFromFile" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ContactCreationTests.testCreationContactFromFile" />
         <item itemvalue="TestNG.GroupModificationTests.testGroupModification" />
         <item itemvalue="TestNG.ContactModificationTests.testContactModificationEditionDown" />
         <item itemvalue="TestNG.PointTests" />
         <item itemvalue="TestNG.PointTests.testDistanceFirst" />
-        <item itemvalue="TestNG.GithubTests.testCommits" />
       </list>
     </recent_temporary>
   </component>
