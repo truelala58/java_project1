@@ -31,13 +31,8 @@ public class ApplicationManager {
     }
 
     public void init() throws IOException {
-         ClassLoader classLoader = this.getClass().getClassLoader();
          String target = System.getProperty("target", "local");
          properties.load(new FileReader(String.format("src/test/resources/%s.properties", target)));
-    //   InputStream inputStream = new FileInputStream("resources/local.properties");
-    //   properties.load(inputStream);
-    //  properties.load(ClassLoader.class.getResourceAsStream("/local.properties"));
-
     }
 
     public void stop(){
