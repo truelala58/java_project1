@@ -20,6 +20,7 @@ public class UsersHelper extends HelperBase{
         }
 
         public void userForChangePassword(String username) {
+
             Users users = app.db().users();
             Integer id = null;
             for (UserData user : users) {
@@ -28,8 +29,8 @@ public class UsersHelper extends HelperBase{
                     id = user.getId();
                 }
             }
-                click(By.cssSelector("a[href='/mantisbt-2.25.2/manage_overview_page.php']"));
-                click(By.cssSelector("a[href='/mantisbt-2.25.2/manage_user_page.php']"));
+                click(By.cssSelector("a[href='/" + app.getProperty("web.domen") + "/manage_overview_page.php']"));
+                click(By.cssSelector("a[href='/" + app.getProperty("web.domen") + "/manage_user_page.php']"));
                 click(By.cssSelector("a[href='manage_user_edit_page.php?user_id=" + id + "'"));
                 click(By.cssSelector("input[value='Сбросить пароль']"));
 

@@ -6,15 +6,15 @@ repositories{
 }
 
 dependencies{
-    testImplementation 'org.testng:testng:7.4.0'
-    implementation 'org.seleniumhq.selenium:selenium-java:4.1.1'
+    testImplementation 'org.testng:testng:7.5'
+    implementation 'org.seleniumhq.selenium:selenium-java:4.1.2'
     implementation 'org.hamcrest:java-hamcrest:2.0.0.0'
     testImplementation 'org.apache.httpcomponents:httpclient:4.5.13'
     implementation 'commons-net:commons-net:3.8.0'
     implementation 'org.subethamail:subethasmtp:3.1.7'
     implementation 'ru.lanwen.verbalregex:java-verbal-expressions:1.8'
-    implementation 'mysql:mysql-connector-java:5.1.38'
-    implementation 'org.hibernate:hibernate-vibur:5.5.6.Final'
+    implementation 'mysql:mysql-connector-java:8.0.25'
+    implementation 'org.hibernate:hibernate-vibur:5.6.5.Final'
     implementation 'biz.futureware.mantis:mantis-axis-soap-client:1.2.19'
     implementation 'com.jayway.restassured:rest-assured:2.9.0'
 }
